@@ -5,15 +5,17 @@ import React, { useEffect, useState } from 'react'
 
 
 const Lines = ({mouseData, stylesForLines}) => {
-    let [x, setX] = useState(0);
-    let [y, setY] = useState(0);
-    let [style1, setStyle1] = useState({});
-    let [style2, setStyle2] = useState({});
+    const [md, setMd] = useState({});
+    const [x, setX] = useState(0);
+    const [y, setY] = useState(0);
+    const [style1, setStyle1] = useState({});
+    const [style2, setStyle2] = useState({});
     
 
-    useEffect(function(){
-        setX(((window.innerWidth) - mouseData.pageX ));
-        setY((window.innerHeight - mouseData.pageY ));
+    useEffect(() => {
+        setMd(mouseData);
+        setX(((window.innerWidth) - md.pageX ));
+        setY((window.innerHeight - md.pageY ));
          setStyle1({
             
              transform: `translateX(${x/50}px) translateY(${y/50}px)`,
@@ -29,7 +31,7 @@ const Lines = ({mouseData, stylesForLines}) => {
              height:"100%",
          }
         )
-    },[mouseData])
+    },[mouseData]);
     
     return ( 
         <div className={classes.Sizer}>
