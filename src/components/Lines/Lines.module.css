@@ -9,7 +9,18 @@
     transform: rotateZ(-45deg);
     box-shadow: 0 0 5px #fff, 0 0 0px #fff, 0 0 10px #e62300, 0 0 20px #0023e6, 0 0 25px #0023e6, 0 5px 30px #0023e6, 0 -5px 35px #0023e6;
 }
+.Sizer {
+   width: 100%;
+   height: 100%;
+}
+.Sizer span{
+    position: absolute;
+    
+}
+.Borderer{
+   position: absolute;
+   right: 1600px;
 
-
+}
 
 

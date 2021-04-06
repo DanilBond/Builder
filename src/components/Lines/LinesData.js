@@ -5,7 +5,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "250px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "400px",
         marginLeft: "175px",
         bordeRadius: "15px",
@@ -17,7 +17,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "350px",
         height: "5px",
-        position: "absolute",
+        
         marginTop: "100px",
         marginLeft: "100px",
         bordeRadius: "15px",
@@ -29,7 +29,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "100px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "475px",
         marginLeft: "-0px",
         bordeRadius: "15px",
@@ -41,7 +41,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "125px",
         height: "3px",
-        position: "absolute",
+        
         marginTop: "275px",
         marginLeft: "175px",
         bordeRadius: "15px",
@@ -53,7 +53,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "130px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "150px",
         marginLeft: "0px",
         bordeRadius: "15px",
@@ -65,7 +65,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "120px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "350px",
         marginLeft: "25px",
         bordeRadius: "15px",
@@ -77,7 +77,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "110px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "275px",
         marginLeft: "-0px",
         bordeRadius: "15px",
@@ -89,7 +89,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "350px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "200px",
         marginLeft: "225px",
         bordeRadius: "15px",
@@ -101,7 +101,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "250px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "500px",
         marginLeft: "-0px",
         bordeRadius: "15px",
@@ -113,7 +113,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "200px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "100px",
         marginLeft: "300px",
         bordeRadius: "15px",
@@ -125,7 +125,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "130px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "75px",
         marginLeft: "150px",
         bordeRadius: "15px",
@@ -146,7 +146,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "250px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "500px",
         marginLeft: "1000px",
         bordeRadius: "15px",
@@ -158,7 +158,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "350px",
         height: "5px",
-        position: "absolute",
+        
         marginTop: "375px",
         marginLeft: "1150px",
         bordeRadius: "15px",
@@ -170,7 +170,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "100px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "525px",
         marginLeft: "1200px",
         bordeRadius: "15px",
@@ -183,7 +183,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "200px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "200px",
         marginLeft: "1300px",
         bordeRadius: "15px",
@@ -196,7 +196,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "130px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "725px",
         marginLeft: "1300px",
         bordeRadius: "15px",
@@ -208,7 +208,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "120px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "700px",
         marginLeft: "1100px",
         bordeRadius: "15px",
@@ -220,7 +220,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "110px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "575px",
         marginLeft: "1450px",
         bordeRadius: "15px",
@@ -232,7 +232,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "350px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "500px",
         marginLeft: "1250px",
         bordeRadius: "15px",
@@ -244,7 +244,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "250px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "675px",
         marginLeft: "925px",
         bordeRadius: "15px",
@@ -256,7 +256,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "200px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "350px",
         marginLeft: "1350px",
         bordeRadius: "15px",
@@ -268,7 +268,7 @@ let stylesForLines = {
         backgroundColor:" rgb(162, 154, 241)",
         width: "130px",
         height: "4px",
-        position: "absolute",
+        
         marginTop: "700px",
         marginLeft: "1225px",
         bordeRadius: "15px",

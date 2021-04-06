@@ -1,3 +1,4 @@
+import classes from "./Lines.module.css";
 import React, { useEffect, useState } from 'react'
 
 
@@ -16,17 +17,31 @@ const Lines = ({mouseData, stylesForLines}) => {
          setStyle1({
             
              transform: `translateX(${x/50}px) translateY(${y/50}px)`,
+             
+             width:"100%",
+             height:"100%",
          })
          setStyle2({
             
              transform: `translateX(${x/100}px) translateY(${y/100}px)`,
+             
+             width:"100%",
+             height:"100%",
          }
         )
     },[mouseData])
     
     return ( 
-        <div>
-            <div>
+        <div className={classes.Sizer}>
+            
+            <div style={
+                {
+                    position: "absolute",
+                    
+                    width:"100%",
+                }
+            }>
+                
             <div style={style1}>
             <span style={stylesForLines.neonLine1}></span>
             <span style={stylesForLines.neonLine2}></span>
@@ -45,25 +60,32 @@ const Lines = ({mouseData, stylesForLines}) => {
             </div>
 
 
-            <div>
+            <div style={
+                {
+                    position: "absolute",
+                    bottom:"800px",
+                   
+                    width:"100%",
+                    
+                }}>
             <div style={style1}>
-            <span style={stylesForLines.neonLine12}></span>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine12}></span></div>
             
-            <span style={stylesForLines.neonLine14}></span>
-            <span style={stylesForLines.neonLine15}></span>
-            <span style={stylesForLines.neonLine16}></span>
-            <span style={stylesForLines.neonLine17}></span>
-            <span style={stylesForLines.neonLine19}></span>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine14}></span></div>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine15}></span></div>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine16}></span></div>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine17}></span></div>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine19}></span></div>
             </div>
             <div style={style2}>
             
-            <span style={stylesForLines.neonLine13}></span>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine13}></span></div>
             
-            <span style={stylesForLines.neonLine22}></span>
-            <span style={stylesForLines.neonLine20}></span>
-            <span style={stylesForLines.neonLine21}></span>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine22}></span></div>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine20}></span></div>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine21}></span></div>
             
-            <span style={stylesForLines.neonLine18}></span>
+            <div className={classes.Borderer}><span style={stylesForLines.neonLine18}></span></div>
             </div>
             </div>
       </div>

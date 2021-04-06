@@ -9,9 +9,10 @@ const Layout = ({mouseData}) => {
     
     return ( 
     <div className={classes.Layout}>
-        <LinesData mouseData={mouseData}/>
+        
         <Nav/>
-        <Drawer mouseData={mouseData}/>
+        <LinesData mouseData={mouseData}/>
+        {/* <Drawer mouseData={mouseData}/> */}
     </div> );
 }
  
