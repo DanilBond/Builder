@@ -37,6 +37,7 @@ const Lines = ({mouseData, stylesForLines}) => {
             <div style={
                 {
                     position: "absolute",
+                    left:"-30px",
                     
                     width:"100%",
                 }
@@ -63,8 +64,8 @@ const Lines = ({mouseData, stylesForLines}) => {
             <div style={
                 {
                     position: "absolute",
-                    bottom:"800px",
-                   
+                    bottom:"750px",
+                    right:"-30px",
                     width:"100%",
                     
                 }}>

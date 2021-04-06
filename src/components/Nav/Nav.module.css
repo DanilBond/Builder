@@ -1,5 +1,6 @@
 .Nav{
     font-size: 25px;
+    z-index: 2;
     background: rgba(0, 0, 0, 0.486);
     box-shadow: 0 15px 35px rgb(0 0 0 / 20%);
     backdrop-filter: blur(7px);
