@@ -1,7 +1,4 @@
-import classes from "./Lines.module.css";
-import { useSpring, animated } from 'react-spring'
 import React, { useEffect, useState } from 'react'
-import LinesImg from "../../images/lines.svg"
 
 
 

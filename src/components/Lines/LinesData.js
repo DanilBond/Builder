@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Lines from "./Lines";
 
 let stylesForLines = {
