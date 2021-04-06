@@ -1,0 +1,13 @@
+.Nav{
+    font-size: 25px;
+    background: rgba(0, 0, 0, 0.486);
+    box-shadow: 0 15px 35px rgb(0 0 0 / 20%);
+    backdrop-filter: blur(7px);
+    display: flex;
+}
+.Nav img{
+    width: 200px;
+    margin: 0;
+    margin-left: 25px;
+    padding: 5px 0;
+}

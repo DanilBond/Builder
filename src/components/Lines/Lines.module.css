@@ -1,0 +1,15 @@
+.Lines{
+    background-color: rgb(162, 154, 241);
+    width: 450px;
+    height: 5px;
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 100px;
+    border-radius: 15px;
+    transform: rotateZ(-45deg);
+    box-shadow: 0 0 5px #fff, 0 0 0px #fff, 0 0 10px #e62300, 0 0 20px #0023e6, 0 0 25px #0023e6, 0 5px 30px #0023e6, 0 -5px 35px #0023e6;
+}
+
+
+
+
