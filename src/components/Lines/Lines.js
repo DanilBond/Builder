@@ -31,7 +31,7 @@ const Lines = ({mouseData, stylesForLines}) => {
          }
         )
         
-    },[mouseData]);
+    },[mouseData, x, y]);
     
     return ( 
         <div className={classes.Sizer}>

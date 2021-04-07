@@ -1,4 +1,3 @@
-
 import classes from "./Controls.module.css";
 
 import systemBlock from "../../images/Icons/Systemblock.svg"
@@ -15,12 +14,15 @@ import ComponentPart from "../Componentitem/ComponentPart";
 import axios from "axios";
 
 
+
 const Controls = ({setImg}) => {
     let [componentType, setComponentType] = useState("Select part");
     let [exterior, setExterior] = useState([]);
     let [cpu, setCpu] = useState([]);
-
     let [result, setResult] = useState([]);
+
+ 
+
     useEffect(
         () => axios
           .get('https://pcbuilder-989af-default-rtdb.firebaseio.com/series.json')
@@ -43,6 +45,10 @@ const Controls = ({setImg}) => {
                 case"CPU":
                 setResult(cpu);
                 break;
+
+                default:
+                    setResult(exterior);
+                    break;
 
             }
 
