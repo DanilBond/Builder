@@ -1,4 +1,4 @@
-const ComponentPart = ({price, name, classes, url, setUrl}) => {
+const ComponentPart = ({price, name, classes, url, setUrl, type, setStyle}) => {
     return (
         <div onClick={()=>{setUrl(url)}}> 
         <div className={classes.Part} >
