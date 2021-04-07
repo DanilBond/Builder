@@ -1,6 +1,5 @@
 import classes from "./Drawer.module.css";
-import img from "../../images/yellowblack.png"
-import ControlLeft from "../Controls/ControlLeft";
+import img from "../../images/yellowblack.png";
 
 const Drawer = () => {
     

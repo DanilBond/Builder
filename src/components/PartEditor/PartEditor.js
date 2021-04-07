@@ -3,7 +3,7 @@ import PartEditorComponent from "./PartEditorComponent/PartEditorComponent"
 const PartEditor = () => {
     return ( 
         <div>
-            <PartEditorComponent/>
+            <PartEditorComponent type="default"/>
         </div>
      );
 }
