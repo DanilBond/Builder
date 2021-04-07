@@ -17,28 +17,34 @@ import axios from "axios";
 
 
 const Controls = () => {
-    let [isGettingData, getData] = useState(false)
-    let [componentType, setComponentType] = useState("Exterior");
-    let [exteriorData, setExteriorData] = useState([]);
+    let [componentType, setComponentType] = useState("Select part");
     let [exterior, setExterior] = useState([]);
 
+    let [result, setResult] = useState([]);
     useEffect(
         () => axios
           .get('https://pcbuilder-989af-default-rtdb.firebaseio.com/series.json')
           .then(response => {
-            setExteriorData(Object.values(response.data.cyber.parts.exterior));
-            for (const i of exteriorData) {
+            for (const i of Object.values(response.data.cyber.parts.exterior)) {
                 //exterior.push(i)
                 setExterior((oldItems) => [...oldItems, <ComponentPart price={i.price} name={i.name} classes={classes}/>]);
             }
-            isGettingData = false;
-          }),[isGettingData]);
+
+
+            switch(componentType){
+                case"Exterior":
+                setResult(exterior);
+                break;
+
+            }
+            
+          }),[componentType]);
 
     return (
         <div className={classes.ControlPanels}>
             <div className={classes.Controls}>
                     
-                <div onClick={()=>{setComponentType("Exterior"); getData(true);}}>
+                <div onClick={()=>{setComponentType("Exterior");}}>
                     <Componentitem img={systemBlock} name="Exterior" classes={classes}/>
                 </div>
 
@@ -79,9 +85,9 @@ const Controls = () => {
                 <div className={classes.NameBack}>              
                     <div className={classes.Name}>{componentType}</div>
                 </div>
-
+                
                 <div onClick={()=>{}}>
-                    {exterior}
+                    {result}
                 </div>
             </div>
         </div>
