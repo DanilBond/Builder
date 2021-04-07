@@ -3,6 +3,8 @@ import classes from "./Layout.module.css";
 
 import Drawer from "../Drawer/Drawer";
 import LinesData from "../Lines/LinesData";
+import ControlLeft from "../Controls/ControlLeft";
+import ControlRight from "../Controls/ControlRight";
 
 
 const Layout = ({mouseData}) => {
@@ -12,7 +14,9 @@ const Layout = ({mouseData}) => {
         <LinesData mouseData={mouseData}/>
         <Nav/>
         
-        <Drawer mouseData={mouseData}/>
+        <Drawer/>
+        <ControlLeft/>
+        <ControlRight/>
     </div> );
 }
  

@@ -1,0 +1,43 @@
+.Part{
+    margin: 10px auto;
+    width: 325px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: background-color;
+    transition-duration: .05s;
+}
+.ImgBg{
+    margin-top: 2.5px;
+    margin-left: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    
+}
+.ImgBg img{
+    margin: 5px;
+
+    
+}
+.ImgBg svg{
+    fill: #e3e3e3;
+}
+.Text{
+
+    font-size: 21px;
+    margin-left: 15px;
+}
+.Parent{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.Part:hover{
+    background-color: rgba(255, 255, 255,0.3);
+    transition: background-color;
+    transition-duration: .05s;
+}
