@@ -1,7 +1,6 @@
 import classes from "./Drawer.module.css";
-import img from "../../images/yellowblack.png";
 
-const Drawer = () => {
+const Drawer = ({img}) => {
     
     return ( 
         <div className={classes.Drawer}>

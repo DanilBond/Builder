@@ -16,7 +16,7 @@ import ComponentPart from "../Componentitem/ComponentPart";
 import axios from "axios";
 
 
-const Controls = () => {
+const Controls = ({setImg}) => {
     let [componentType, setComponentType] = useState("Select part");
     let [exterior, setExterior] = useState([]);
 
@@ -27,7 +27,8 @@ const Controls = () => {
           .then(response => {
             for (const i of Object.values(response.data.cyber.parts.exterior)) {
                 //exterior.push(i)
-                setExterior((oldItems) => [...oldItems, <ComponentPart price={i.price} name={i.name} classes={classes}/>]);
+                setExterior((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+            
             }
 
 
@@ -85,10 +86,7 @@ const Controls = () => {
                 <div className={classes.NameBack}>              
                     <div className={classes.Name}>{componentType}</div>
                 </div>
-                
-                <div onClick={()=>{}}>
                     {result}
-                </div>
             </div>
         </div>
      );

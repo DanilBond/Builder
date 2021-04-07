@@ -1,11 +1,13 @@
-const ComponentPart = ({price, name, classes}) => {
-    return ( 
+const ComponentPart = ({price, name, classes, url, setUrl}) => {
+    return (
+        <div onClick={()=>{setUrl(url)}}> 
         <div className={classes.Part} >
             <div className={classes.ParentCP}>
             <span className={classes.NameCP}>{name}</span>
             <span className={classes.Price}>{price}</span>
             
             </div>
+        </div>
         </div>
      );
 }
