@@ -12,43 +12,44 @@ import audiocard from "../../images/Icons/Audiocard.svg"
 import Componentitem from "../Componentitem/Componentitem";
 import PartEditor from "../PartEditor/PartEditor";
 import { useState } from "react";
+import ComponentPart from "../Componentitem/ComponentPart";
 
 const Controls = () => {
-    let [componentType, setComponentType] = useState("default");
+    let [componentType, setComponentType] = useState("Exterior");
 
     return (
         <div className={classes.ControlPanels}>
             <div className={classes.Controls}>
                     
-                <div onClick={()=>{setComponentType("systemBlock");}}>
+                <div onClick={()=>{setComponentType("Exterior");}}>
                     <Componentitem img={systemBlock} name="Exterior" classes={classes}/>
                 </div>
 
-                <div onClick={()=>{setComponentType("cpu");}}>
+                <div onClick={()=>{setComponentType("CPU");}}>
                     <Componentitem img={cpu} name="CPU" classes={classes}/>
                 </div>
 
-                <div onClick={()=>{setComponentType("gpu");}}>
+                <div onClick={()=>{setComponentType("GPU");}}>
                     <Componentitem img={gpu} name="GPU" classes={classes}/>
                 </div>
 
-                <div onClick={()=>{setComponentType("mb");}}>
+                <div onClick={()=>{setComponentType("Main board");}}>
                     <Componentitem img={mb} name="Main board" classes={classes}/>
                 </div>
 
-                <div onClick={()=>{setComponentType("memory");}}>
+                <div onClick={()=>{setComponentType("RAM");}}>
                     <Componentitem img={memory} name="RAM" classes={classes}/>
                 </div>
 
-                <div onClick={()=>{setComponentType("harddisk");}}>
+                <div onClick={()=>{setComponentType("Harddisk");}}>
                     <Componentitem img={harddisk} name="Harddisk" classes={classes}/>
                 </div>
 
-                <div onClick={()=>{setComponentType("powersupply");}}>
+                <div onClick={()=>{setComponentType("Powersupply");}}>
                     <Componentitem img={powersupply} name="Powersupply" classes={classes}/>
                 </div>
 
-                <div onClick={()=>{setComponentType("audiocard");}}>
+                <div onClick={()=>{setComponentType("Audiocard");}}>
                     <Componentitem img={audiocard} name="Audiocard" classes={classes}/>
                 </div>
                 
@@ -57,8 +58,14 @@ const Controls = () => {
 
 
 
-            <div className={classes.Controls}>                    
-                {componentType}
+            <div className={classes.Controls}>      
+                <div className={classes.NameBack}>              
+                    <div className={classes.Name}>{componentType}</div>
+                </div>
+
+                <div onClick={()=>{}}>
+                    <ComponentPart price="1000 ₽" name="Red black" classes={classes}/>
+                </div>
             </div>
         </div>
      );
