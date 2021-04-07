@@ -3,7 +3,7 @@ import classes from "./Controls.module.css";
 
 import systemBlock from "../../images/Icons/Systemblock.svg"
 import gpu from "../../images/Icons/GPU.svg"
-import cpu from "../../images/Icons/CPU.svg"
+import cpuimg from "../../images/Icons/CPU.svg"
 import mb from "../../images/Icons/MB.svg"
 import memory from "../../images/Icons/Memory.svg"
 import harddisk from "../../images/Icons/Harddisk.svg"
@@ -19,26 +19,33 @@ import axios from "axios";
 const Controls = ({setImg}) => {
     let [componentType, setComponentType] = useState("Select part");
     let [exterior, setExterior] = useState([]);
+    let [cpu, setCpu] = useState([]);
 
     let [result, setResult] = useState([]);
     useEffect(
         () => axios
           .get('https://pcbuilder-989af-default-rtdb.firebaseio.com/series.json')
           .then(response => {
+            setExterior([]);
+            setCpu([]);
             for (const i of Object.values(response.data.cyber.parts.exterior)) {
-                //exterior.push(i)
                 setExterior((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
-            
             }
 
+            for (const i of Object.values(response.data.cyber.parts.cpu)) {
+                setCpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+            }
 
             switch(componentType){
                 case"Exterior":
                 setResult(exterior);
                 break;
+                case"CPU":
+                setResult(cpu);
+                break;
 
             }
-            
+
           }),[componentType]);
 
     return (
@@ -50,7 +57,7 @@ const Controls = ({setImg}) => {
                 </div>
 
                 <div onClick={()=>{setComponentType("CPU");}}>
-                    <Componentitem img={cpu} name="CPU" classes={classes}/>
+                    <Componentitem img={cpuimg} name="CPU" classes={classes}/>
                 </div>
 
                 <div onClick={()=>{setComponentType("GPU");}}>
