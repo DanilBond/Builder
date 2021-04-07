@@ -30,8 +30,24 @@
     display: flex;
     flex-direction: column;
     transition: background-color;
-    transition-duration: .05s;
+    transition-duration: 0.02s;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+    animation-name: scaleIn;
+    transform: scale(1);
 }
+
+
+
+@keyframes scaleIn {
+    0% {
+      transform: translateX(500px);
+    }
+    100% {
+      transform: translateX(0px);
+      animation-play-state: paused;
+    }
+  }
 .ImgBg{
     
     margin-left: 10px;

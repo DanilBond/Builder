@@ -11,6 +11,7 @@ const Drawer = ({img}) => {
             width: '800px',
             height: '424px',
             filter: 'drop-shadow(0 0 15px rgba(0, 0, 0, 1))',
+            
         }}/></span>
         
         </div>

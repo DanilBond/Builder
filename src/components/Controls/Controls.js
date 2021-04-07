@@ -10,7 +10,6 @@ import harddisk from "../../images/Icons/Harddisk.svg"
 import powersupply from "../../images/Icons/Powerblock.svg"
 import audiocard from "../../images/Icons/Audiocard.svg"
 import Componentitem from "../Componentitem/Componentitem";
-import PartEditor from "../PartEditor/PartEditor";
 import { useEffect, useState } from "react";
 import ComponentPart from "../Componentitem/ComponentPart";
 import axios from "axios";
@@ -28,6 +27,7 @@ const Controls = ({setImg}) => {
           .then(response => {
             setExterior([]);
             setCpu([]);
+            setResult([]);
             for (const i of Object.values(response.data.cyber.parts.exterior)) {
                 setExterior((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
             }
