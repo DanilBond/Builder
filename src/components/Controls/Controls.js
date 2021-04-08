@@ -1,7 +1,7 @@
 import classes from "./Controls.module.css";
 
 import systemBlock from "../../images/Icons/Systemblock.svg"
-import gpu from "../../images/Icons/GPU.svg"
+import gpuimg from "../../images/Icons/GPU.svg"
 import cpuimg from "../../images/Icons/CPU.svg"
 import mb from "../../images/Icons/MB.svg"
 import memory from "../../images/Icons/Memory.svg"
@@ -12,6 +12,7 @@ import Componentitem from "../Componentitem/Componentitem";
 import { useEffect, useState } from "react";
 import ComponentPart from "../Componentitem/ComponentPart";
 import axios from "axios";
+import Loading from "../Loading/Loading";
 
 
 
@@ -19,23 +20,33 @@ const Controls = ({setImg}) => {
     let [componentType, setComponentType] = useState("Select part");
     let [exterior, setExterior] = useState([]);
     let [cpu, setCpu] = useState([]);
+    let [gpu, setGpu] = useState([]);
     let [result, setResult] = useState([]);
-
- 
+    
 
     useEffect(
-        () => axios
+        function(){
+           if(componentType != "Select part"){
+           setResult(<Loading/>);
+           }
+           axios
           .get('https://pcbuilder-989af-default-rtdb.firebaseio.com/series.json')
           .then(response => {
             setExterior([]);
             setCpu([]);
+            setGpu([]);
             setResult([]);
+            
             for (const i of Object.values(response.data.cyber.parts.exterior)) {
                 setExterior((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.cpu)) {
                 setCpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+            }
+
+            for (const i of Object.values(response.data.cyber.parts.gpu)) {
+                setGpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
             }
 
             switch(componentType){
@@ -45,14 +56,19 @@ const Controls = ({setImg}) => {
                 case"CPU":
                 setResult(cpu);
                 break;
+                case"GPU":
+                setResult(gpu);
+                break;
 
                 default:
                     setResult(exterior);
                     break;
 
             }
+            console.log("Loaded");
+          })},[componentType]);
 
-          }),[componentType]);
+    
 
     return (
         <div className={classes.ControlPanels}>
@@ -67,7 +83,7 @@ const Controls = ({setImg}) => {
                 </div>
 
                 <div onClick={()=>{setComponentType("GPU");}}>
-                    <Componentitem img={gpu} name="GPU" classes={classes}/>
+                    <Componentitem img={gpuimg} name="GPU" classes={classes}/>
                 </div>
 
                 <div onClick={()=>{setComponentType("Main board");}}>
