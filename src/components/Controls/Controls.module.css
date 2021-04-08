@@ -36,9 +36,69 @@
     animation-name: scaleIn;
     transform: scale(1);
 }
-
-
-
+.PartCC{
+    margin: 10px auto;
+    width: 325px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: background-color;
+    transition-duration: 0.02s;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+    animation-name: scaleIn;
+    transform: scale(1);
+    justify-content: center;
+    
+}
+.PartCC input{
+    text-align: center;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    
+}
+.PartCC input:focus{
+    outline: none;
+}
+.NameCC{
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 300px;
+    text-overflow: ellipsis;
+}
+.PriceCC{
+    
+    font-size: 20px;
+    margin-right: 15px;
+}
+.ParentCC{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.OneLineFlex{
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    width: 150px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
 @keyframes scaleIn {
     0% {
       transform: translateX(500px);
@@ -48,6 +108,10 @@
       animation-play-state: paused;
     }
   }
+input[type=number]::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
 .ImgBg{
     
     margin-left: 10px;

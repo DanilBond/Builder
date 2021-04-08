@@ -3,7 +3,7 @@ import classes from "./Controls.module.css";
 import systemBlock from "../../images/Icons/Systemblock.svg"
 import gpuimg from "../../images/Icons/GPU.svg"
 import cpuimg from "../../images/Icons/CPU.svg"
-import mb from "../../images/Icons/MB.svg"
+import mbimg from "../../images/Icons/MB.svg"
 import memory from "../../images/Icons/Memory.svg"
 import harddisk from "../../images/Icons/Harddisk.svg"
 import powersupply from "../../images/Icons/Powerblock.svg"
@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import ComponentPart from "../Componentitem/ComponentPart";
 import axios from "axios";
 import Loading from "../Loading/Loading";
+import ComponentCountable from "../Componentitem/ComponentCountable";
 
 
 
@@ -21,6 +22,8 @@ const Controls = ({setImg}) => {
     let [exterior, setExterior] = useState([]);
     let [cpu, setCpu] = useState([]);
     let [gpu, setGpu] = useState([]);
+    let [mb, setMb] = useState([]);
+    let [ram, setRam] = useState([]);
     let [result, setResult] = useState([]);
     
 
@@ -35,6 +38,8 @@ const Controls = ({setImg}) => {
             setExterior([]);
             setCpu([]);
             setGpu([]);
+            setMb([]);
+            setRam([]);
             setResult([]);
             
             for (const i of Object.values(response.data.cyber.parts.exterior)) {
@@ -49,6 +54,14 @@ const Controls = ({setImg}) => {
                 setGpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
             }
 
+            for (const i of Object.values(response.data.cyber.parts.mb)) {
+                setMb((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+            }
+
+            for (const i of Object.values(response.data.cyber.parts.ram)) {
+                setRam((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+            }
+
             switch(componentType){
                 case"Exterior":
                 setResult(exterior);
@@ -58,6 +71,12 @@ const Controls = ({setImg}) => {
                 break;
                 case"GPU":
                 setResult(gpu);
+                break;
+                case"Main board":
+                setResult(mb);
+                break;
+                case"RAM":
+                setResult(ram);
                 break;
 
                 default:
@@ -87,7 +106,7 @@ const Controls = ({setImg}) => {
                 </div>
 
                 <div onClick={()=>{setComponentType("Main board");}}>
-                    <Componentitem img={mb} name="Main board" classes={classes}/>
+                    <Componentitem img={mbimg} name="Main board" classes={classes}/>
                 </div>
 
                 <div onClick={()=>{setComponentType("RAM");}}>
