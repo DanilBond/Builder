@@ -24,6 +24,9 @@ const Controls = ({setImg}) => {
     let [gpu, setGpu] = useState([]);
     let [mb, setMb] = useState([]);
     let [ram, setRam] = useState([]);
+    let [hdd, setHdd] = useState([]);
+    let [power, setPower] = useState([]);
+    let [sound, setSound] = useState([]);
     let [result, setResult] = useState([]);
     
 
@@ -40,6 +43,9 @@ const Controls = ({setImg}) => {
             setGpu([]);
             setMb([]);
             setRam([]);
+            setHdd([]);
+            setPower([]);
+            setSound([]);
             setResult([]);
             
             for (const i of Object.values(response.data.cyber.parts.exterior)) {
@@ -62,6 +68,18 @@ const Controls = ({setImg}) => {
                 setRam((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
             }
 
+            for (const i of Object.values(response.data.cyber.parts.hdd)) {
+                setHdd((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+            }
+
+            for (const i of Object.values(response.data.cyber.parts.power)) {
+                setPower((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+            }
+
+            for (const i of Object.values(response.data.cyber.parts.sound)) {
+                setSound((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+            }
+
             switch(componentType){
                 case"Exterior":
                 setResult(exterior);
@@ -77,6 +95,15 @@ const Controls = ({setImg}) => {
                 break;
                 case"RAM":
                 setResult(ram);
+                break;
+                case"Harddisk":
+                setResult(hdd);
+                break;
+                case"Powersupply":
+                setResult(power);
+                break;
+                case"Audiocard":
+                setResult(sound);
                 break;
 
                 default:
