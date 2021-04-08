@@ -159,7 +159,7 @@ input[type=number]::-webkit-inner-spin-button {
     align-items: center;
     height: 100%;
 }
-.Part:hover{
+.Part:hover, .PartCC:hover{
     background-color: rgba(255, 255, 255,0.3);
     transition: background-color;
     transition-duration: .05s;

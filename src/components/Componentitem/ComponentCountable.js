@@ -6,7 +6,7 @@ const ComponentCountable = ({price, name, classes, url, setUrl}) => {
             <span className={classes.NameCC}>{name}</span>
             <div className={classes.OneLineFlex}>
             <span className={classes.PriceCC}>{price}</span>
-            <input type="number" value={1}></input>
+            <input type="number" min="1" max="4"></input>
             </div>
             </div>
         </div>
