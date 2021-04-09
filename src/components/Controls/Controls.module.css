@@ -107,7 +107,7 @@
       transform: translateX(0px);
       animation-play-state: paused;
     }
-  }
+}
 input[type=number]::-webkit-inner-spin-button {
     appearance: none;
     margin: 0;

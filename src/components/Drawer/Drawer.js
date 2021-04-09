@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Loading from "../Loading/Loading";
 import classes from "./Drawer.module.css";
 

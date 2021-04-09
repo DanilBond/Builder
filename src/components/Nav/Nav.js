@@ -5,6 +5,9 @@ const Nav = () => {
     return ( 
         <div className={classes.Nav}>
             <img src={logo} alt=""/>
+            <div className={classes.RightSide}>
+            <div>Order</div>
+            </div>
         </div>
      );
 }

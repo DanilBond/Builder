@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Molot;
+    src: url(../../Fonts/MOLOT.otf);
+  }
+
 .Nav{
     font-size: 25px;
     z-index: 2;
@@ -5,10 +10,19 @@
     box-shadow: 0 15px 35px rgb(0 0 0 / 20%);
     backdrop-filter: blur(7px);
     display: flex;
+    justify-content: space-between;
 }
 .Nav img{
     width: 200px;
     margin: 0;
     margin-left: 25px;
     padding: 5px 0;
+}
+.RightSide{
+    display: flex;
+    align-items: center;
+}
+.RightSide div{
+    color: white;
+   
 }

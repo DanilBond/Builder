@@ -31,7 +31,7 @@ const Controls = ({setImg, onStartLoadingEvent}) => {
 
     useEffect(
         function(){
-           if(componentType != "Select part"){
+           if(componentType !== "Select part"){
            setResult(<Loading/>);
            }
            axios

@@ -1,4 +1,4 @@
-const Componentitem = ({img, name, classes, onStartLoadingEvent}) => {
+const Componentitem = ({img, name, classes}) => {
     return ( 
         <div className={classes.Part} >
             <div className={classes.Parent}>
