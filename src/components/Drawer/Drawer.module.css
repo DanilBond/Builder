@@ -11,6 +11,21 @@
     display: flex;
    
 }
+.Anim{
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+    animation-name: scaleIn;
+}
+
+@keyframes scaleIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      animation-play-state: paused;
+    }
+}
 /* .Drawer span img{
     position: absolute;
     margin-bottom: 50px;

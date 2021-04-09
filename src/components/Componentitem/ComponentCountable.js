@@ -1,6 +1,6 @@
-const ComponentCountable = ({price, name, classes, url, setUrl}) => {
+const ComponentCountable = ({price, name, classes, url, setUrl, onStartLoadingEvent}) => {
     return (
-        <div onClick={()=>{setUrl(url)}}> 
+        <div onClick={()=>{setUrl(url); onStartLoadingEvent()}}> 
         <div className={classes.PartCC} >
             <div className={classes.ParentCC}>
             <span className={classes.NameCC}>{name}</span>

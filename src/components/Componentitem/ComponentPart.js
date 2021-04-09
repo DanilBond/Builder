@@ -1,6 +1,6 @@
-const ComponentPart = ({price, name, classes, url, setUrl}) => {
+const ComponentPart = ({price, name, classes, url, setUrl, onStartLoadingEvent}) => {
     return (
-        <div onClick={()=>{setUrl(url)}}> 
+        <div onClick={()=>{setUrl(url); onStartLoadingEvent()}}> 
         <div className={classes.Part} >
             <div className={classes.ParentCP}>
             <span className={classes.NameCP}>{name}</span>

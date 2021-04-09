@@ -1,5 +1,4 @@
 import classes from "./Controls.module.css";
-
 import systemBlock from "../../images/Icons/Systemblock.svg"
 import gpuimg from "../../images/Icons/GPU.svg"
 import cpuimg from "../../images/Icons/CPU.svg"
@@ -17,7 +16,7 @@ import ComponentCountable from "../Componentitem/ComponentCountable";
 
 
 
-const Controls = ({setImg}) => {
+const Controls = ({setImg, onStartLoadingEvent}) => {
     let [componentType, setComponentType] = useState("Select part");
     let [exterior, setExterior] = useState([]);
     let [cpu, setCpu] = useState([]);
@@ -49,35 +48,35 @@ const Controls = ({setImg}) => {
             setResult([]);
             
             for (const i of Object.values(response.data.cyber.parts.exterior)) {
-                setExterior((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+                setExterior((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.cpu)) {
-                setCpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+                setCpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.gpu)) {
-                setGpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+                setGpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.mb)) {
-                setMb((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+                setMb((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.ram)) {
-                setRam((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+                setRam((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.hdd)) {
-                setHdd((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+                setHdd((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.power)) {
-                setPower((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+                setPower((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.sound)) {
-                setSound((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg}/>]);
+                setSound((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
             }
 
             switch(componentType){
@@ -111,8 +110,12 @@ const Controls = ({setImg}) => {
                     break;
 
             }
-            console.log("Loaded");
-          })},[componentType]);
+          }
+          )
+          .catch((error) => {
+              console.log(error);
+          })
+        },[componentType]);
 
     
 
@@ -155,25 +158,17 @@ const Controls = ({setImg}) => {
                 
             </div>
 
-
+            
 
             <div className={classes.Controls}>      
                 <div className={classes.NameBack}>              
                     <div className={classes.Name}>{componentType}</div>
                 </div>
                     {result}
+                   
             </div>
         </div>
      );
 }
  
 export default Controls;
-
-// const result = [];
-//   for (const ingredient in ingredients) {
-//     for (let i = 0; i < ingredients[ingredient]; i++) {
-//       result.push(<PizzaIngredient key={ingredient + i} type={ingredient} />)
-//     }
-//   }
-
-//<ComponentPart price="1000 ₽" name="Red black" classes={classes}/>
