@@ -8,7 +8,7 @@ import { useState } from "react";
 
 
 const Layout = ({mouseData}) => {
-    let [img, setImg] = useState('https://lh3.google.com/u/0/d/1r2-Bhv77YpLLe893ebH_IZv6k5vonMht=w1920-h942-iv1');
+    let [img, setImg] = useState('https://i.ibb.co/p3WXkTF/black.png');
 
     let [loaderStyle, setLoaderStyle] = useState({
         width: "100%",
