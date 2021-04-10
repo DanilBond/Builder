@@ -1,6 +1,6 @@
 import classes from "./Price.module.css";
 
-const Price = ({price}) => {
+const Price = ({price, setWindowState}) => {
     return (
         <>
         <div className={classes.Price}>
@@ -10,7 +10,7 @@ const Price = ({price}) => {
             <div className={classes.Background}>
                 <div className={classes.Text}>Price: {price} ₽</div>
             </div>
-            <div className={classes.BackgroundOrder}>
+            <div className={classes.BackgroundOrder} onClick={()=>{setWindowState("Open")}}>
                 <div className={classes.Order}>Order</div>
             </div>
         </div>

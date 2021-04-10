@@ -1,6 +1,6 @@
 import classes from "./Nav.module.css";
 
-const Nav = ({setWindowState}) => {
+const Nav = ({setWindowState, windowState}) => {
     return ( 
         <div className={classes.Nav}>
             {/* <img src={logo} alt=""/> */}
@@ -8,7 +8,7 @@ const Nav = ({setWindowState}) => {
             <div className={classes.RightSide}>
             <h3 className={classes.menubutton}>
                 {/* <a href=''>BUILDER</a> */}
-                <div className={classes.underline} onClick={()=>{setWindowState("Close");}}>BUILDER</div>
+                <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
             </h3>
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}

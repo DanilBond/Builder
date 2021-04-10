@@ -30,7 +30,7 @@ const Layout = ({mouseData}) => {
     });
 
     let [price, setPrice] = useState(0);
-    let [windowState, setWindowState] = useState("Builder");
+    let [windowState, setWindowState] = useState("Hide");
 
 
      function onStartLoadingEvent(){
@@ -55,11 +55,11 @@ const Layout = ({mouseData}) => {
     <div className={classes.Layout}>
         
         <LinesData mouseData={mouseData}/>
-        <Nav setWindowState={setWindowState}/>
+        <Nav setWindowState={setWindowState} windowState={windowState}/>
         
         <Drawer img={img} loaderStyle={loaderStyle} imgStyle={imgStyle} setImgStyle={setImgStyle} setLoaderStyle={setLoaderStyle}/>
         <Modal state={windowState}/>
-        <Price price={price}/>
+        <Price price={price} setWindowState={setWindowState}/>
         
         <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent}/>
         
