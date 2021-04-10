@@ -4,7 +4,9 @@ import classes from "./Layout.module.css";
 import Drawer from "../Drawer/Drawer";
 import LinesData from "../Lines/LinesData";
 import Controls from "../Controls/Controls";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Price from "../Price/Price";
+import Modal from "../Modal/Modal";
 
 
 const Layout = ({mouseData}) => {
@@ -27,6 +29,9 @@ const Layout = ({mouseData}) => {
         filter: 'drop-shadow(0 0 15px rgba(0, 0, 0, 1))',
     });
 
+    let [price, setPrice] = useState(0);
+    let [windowState, setWindowState] = useState("Builder");
+
 
      function onStartLoadingEvent(){
          setLoaderStyle({
@@ -45,13 +50,19 @@ const Layout = ({mouseData}) => {
 
      }
 
+
     return (
     <div className={classes.Layout}>
+        
         <LinesData mouseData={mouseData}/>
-        <Nav/>
-
+        <Nav setWindowState={setWindowState}/>
+        
         <Drawer img={img} loaderStyle={loaderStyle} imgStyle={imgStyle} setImgStyle={setImgStyle} setLoaderStyle={setLoaderStyle}/>
+        <Modal state={windowState}/>
+        <Price price={price}/>
+        
         <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent}/>
+        
     </div> );
 }
 

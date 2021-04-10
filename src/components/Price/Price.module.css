@@ -1,0 +1,73 @@
+.Price{
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    width: 100%;
+    top: 12.5%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.Background{
+    background-color: rgba(255, 255, 255, 0.1);
+    width: auto;
+    height: 50px;
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width;
+    transition-duration: 1s;
+}
+.Text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+.BackgroundOrder{
+    background-color: rgba(255, 255, 255, 0.1);
+    width: auto;
+    height: 50px;
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width background-color;
+    transition-duration: .05s;
+    margin-left: 10px;
+}
+.Order{
+    padding: 0 10px;
+}
+.BackgroundOrder:hover{
+    transition: width background-color;
+    transition-duration: .05s;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.BackgroundAdd{
+    background-color: rgba(255, 255, 255, 0.1);
+    width: auto;
+    height: 50px;
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width background-color;
+    transition-duration: .05s;
+    margin-right: 10px;
+}
+.Add{
+    padding: 0 10px;
+}
+.BackgroundAdd:hover{
+    transition: width background-color;
+    transition-duration: .05s;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}

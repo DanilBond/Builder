@@ -1,0 +1,109 @@
+.ModalOpen{
+    position: absolute;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(8px);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    right: 0;
+    animation: scale-up-top 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ModalClose{
+    position: absolute;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(6px);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    right: 0;
+    animation: scale-to-top 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ModalHide{
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.Parent{
+    width: 600px;
+    margin: 0 auto;
+    height: 510px;
+    border-radius: 30px 30px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(7px);
+    box-shadow: 0 0px 10px rgb(0, 0, 0);
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-top: 75px;
+}
+.Info{
+    position: absolute;
+    top: 15px;
+    left: 37.5%;
+    width: 25%;
+    height: 125px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+}
+.TotalPrice{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin: 15px 0;
+}
+.BackgroundOrder{
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 30%;
+    margin: 0 auto;
+    height: 50px;
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+    transition: width background-color;
+    transition-duration: .05s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Order{
+    font-size: 25px;
+    color: white;
+}
+.BackgroundOrder:hover{
+    transition: width background-color;
+    transition-duration: .05s;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+
+@keyframes scale-up-top {
+    0% {
+      width: 0;
+      height: 0;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+    }
+}
+
+@keyframes scale-to-top {
+    0% {
+        width: 100%;
+        height: 100%;
+    }
+    100% {
+      width: 0;
+      height: 0;
+    }
+}

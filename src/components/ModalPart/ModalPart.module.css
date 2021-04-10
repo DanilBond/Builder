@@ -1,0 +1,25 @@
+.ModalPart{
+    margin: 10px auto;
+    width: 575px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+.Price{
+    font-size: 20px;
+    margin-right: 15px;
+    color: white;
+    font-size: 23px;
+}
+
+.Name{
+    font-size: 25px;
+    width: 325px;
+    color: white;
+    margin-left: 15px;
+}

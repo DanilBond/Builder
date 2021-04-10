@@ -163,10 +163,10 @@ const Controls = ({setImg, onStartLoadingEvent}) => {
             <div className={classes.Controls}>      
                 <div className={classes.NameBack}>              
                     <div className={classes.Name}>{componentType}</div>
-                </div>
-                    {result}
-                   
+                </div>                
+                    {result}                   
             </div>
+            
         </div>
      );
 }
