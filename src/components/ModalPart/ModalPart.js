@@ -1,10 +1,13 @@
+import { useEffect } from "react";
 import classes from "./ModalPart.module.css";
 
-const ModalPart = () => {
+const ModalPart = ({Name, Price, Type}) => {
+    
     return ( 
         <div className={classes.ModalPart}>
-            <span className={classes.Name}>It's a name</span>
-            <span className={classes.Price}>5000 $</span>
+            
+            <span className={classes.Name}>{Name}</span>
+            <span className={classes.Price}>{Price}</span>
         </div>
      );
 }

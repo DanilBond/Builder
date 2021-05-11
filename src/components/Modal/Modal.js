@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ModalPart from "../ModalPart/ModalPart";
 import classes from "./Modal.module.css";
 
-const Modal = ({state}) => {
+const Modal = ({state, setWindowState, orderObj}) => {
     let[ClassName, setClassName] = useState(classes.ModalHide);
 
     useEffect(()=>{
@@ -20,8 +20,16 @@ const Modal = ({state}) => {
                 break;
         }
     }, [state]);
+
+    const results = orderObj.map(order => <ModalPart key={order.id} Name={order.name} Price={order.price} {...order} />);
+
+    useEffect(function(){
+        console.log(Object.values(orderObj));
+    },[orderObj]);
+
+
     return ( 
-        <div className={ClassName}>
+        <div className={ClassName} onClick={()=>{setWindowState("Close");}}>
             <div className={classes.Info}>
                 <div className={classes.TotalPrice}>Total: 7000000 $
             </div>
@@ -31,17 +39,7 @@ const Modal = ({state}) => {
             </div>
             <div className={classes.Parent}>
             <div className={classes.Items}>
-            <ModalPart/>
-            <ModalPart/>
-            <ModalPart/>
-            <ModalPart/>
-            <ModalPart/>
-            <ModalPart/>
-            <ModalPart/>
-            <ModalPart/>
-            <ModalPart/>
-            <ModalPart/>
-            <ModalPart/>
+            {results}
             </div>
             
             </div>

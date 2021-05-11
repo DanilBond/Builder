@@ -7,6 +7,7 @@ import Controls from "../Controls/Controls";
 import { useEffect, useState } from "react";
 import Price from "../Price/Price";
 import Modal from "../Modal/Modal";
+import Builder from "../Builder/Builder";
 
 
 const Layout = ({mouseData}) => {
@@ -31,7 +32,23 @@ const Layout = ({mouseData}) => {
 
     let [price, setPrice] = useState(0);
     let [windowState, setWindowState] = useState("Hide");
-
+   // let [orderObj, setOrderObj] = useState({});
+    let [selected, setSelected] = useState({type:"", name:"", price:""});
+    let [orderObj, setOrderObj] = useState([
+        {type:"exterior",name:"Select exterior",price:0,},
+        {type:"cpu",name:"Select cpu",price:0,},
+        {type:"gpu",name:"Select gpu",price:0,},
+        {type:"mainboard",name:"Select mainboard",price:0,},
+        {type:"ram",name:"Select ram",price:0,},
+        {type:"hdd",name:"Select hdd",price:0,},
+        {type:"power",name:"Select power",price:0,},
+        {type:"audio",name:"Select audio",price:0,},
+    ]);
+    useEffect(()=>{
+        
+        
+        
+    },[orderObj])
 
      function onStartLoadingEvent(){
          setLoaderStyle({
@@ -56,12 +73,12 @@ const Layout = ({mouseData}) => {
         
         <LinesData mouseData={mouseData}/>
         <Nav setWindowState={setWindowState} windowState={windowState}/>
-        
+        <Builder setOrderObj={setOrderObj} setTotalPrice={setPrice} orderObj={orderObj}/>
         <Drawer img={img} loaderStyle={loaderStyle} imgStyle={imgStyle} setImgStyle={setImgStyle} setLoaderStyle={setLoaderStyle}/>
-        <Modal state={windowState}/>
-        <Price price={price} setWindowState={setWindowState}/>
+        <Modal state={windowState} setWindowState={setWindowState} orderObj={orderObj}/>
+        <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj}/>
         
-        <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent}/>
+        <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected}/>
         
     </div> );
 }

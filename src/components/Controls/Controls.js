@@ -16,7 +16,7 @@ import ComponentCountable from "../Componentitem/ComponentCountable";
 
 
 
-const Controls = ({setImg, onStartLoadingEvent}) => {
+const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected}) => {
     let [componentType, setComponentType] = useState("Select part");
     let [exterior, setExterior] = useState([]);
     let [cpu, setCpu] = useState([]);
@@ -48,35 +48,35 @@ const Controls = ({setImg, onStartLoadingEvent}) => {
             setResult([]);
             
             for (const i of Object.values(response.data.cyber.parts.exterior)) {
-                setExterior((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
+                setExterior((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} type="exterior" url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent} setSelected={setSelected}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.cpu)) {
-                setCpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
+                setCpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} type="cpu" url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent} setSelected={setSelected}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.gpu)) {
-                setGpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
+                setGpu((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} type="gpu" url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent} setSelected={setSelected}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.mb)) {
-                setMb((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
+                setMb((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} type="mainboard" url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent} setSelected={setSelected}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.ram)) {
-                setRam((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
+                setRam((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} type="ram" url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent} setSelected={setSelected}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.hdd)) {
-                setHdd((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
+                setHdd((oldItems) => [...oldItems, <ComponentCountable price={i.price + " ₽"} name={i.name} type="hdd" url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent} setSelected={setSelected}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.power)) {
-                setPower((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
+                setPower((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} type="power" url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent} setSelected={setSelected}/>]);
             }
 
             for (const i of Object.values(response.data.cyber.parts.sound)) {
-                setSound((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent}/>]);
+                setSound((oldItems) => [...oldItems, <ComponentPart price={i.price + " ₽"} name={i.name} type="audio" url={i.url} classes={classes} setUrl={setImg} onStartLoadingEvent={onStartLoadingEvent} setSelected={setSelected}/>]);
             }
 
             switch(componentType){
