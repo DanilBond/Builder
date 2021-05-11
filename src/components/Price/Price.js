@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import classes from "./Price.module.css";
 
 const Price = ({price, setWindowState, selected, setOrderObj, orderObj}) => {
+    
+    useEffect(function(){
+       // Object.values(orderObj).map((i) => {setPrice(price+=i.price);});
+    },[orderObj]);
+
     return (
         <>
         <div className={classes.Price}>
