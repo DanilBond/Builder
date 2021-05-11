@@ -75,7 +75,7 @@ const Layout = ({mouseData}) => {
         <Nav setWindowState={setWindowState} windowState={windowState}/>
         <Builder setOrderObj={setOrderObj} setTotalPrice={setPrice} orderObj={orderObj}/>
         <Drawer img={img} loaderStyle={loaderStyle} imgStyle={imgStyle} setImgStyle={setImgStyle} setLoaderStyle={setLoaderStyle}/>
-        <Modal state={windowState} setWindowState={setWindowState} orderObj={orderObj}/>
+        <Modal state={windowState} setWindowState={setWindowState} orderObj={orderObj} TotalPrice={price}/>
         <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj}/>
         
         <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected}/>

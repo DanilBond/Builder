@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ModalPart from "../ModalPart/ModalPart";
 import classes from "./Modal.module.css";
 
-const Modal = ({state, setWindowState, orderObj}) => {
+const Modal = ({state, setWindowState, orderObj, TotalPrice}) => {
     let[ClassName, setClassName] = useState(classes.ModalHide);
 
     useEffect(()=>{
@@ -31,7 +31,7 @@ const Modal = ({state, setWindowState, orderObj}) => {
     return ( 
         <div className={ClassName} onClick={()=>{setWindowState("Close");}}>
             <div className={classes.Info}>
-                <div className={classes.TotalPrice}>Total: 7000000 $
+                <div className={classes.TotalPrice}>Total: {TotalPrice} $
             </div>
                 <div className={classes.BackgroundOrder}>
                     <div className={classes.Order}>Order</div>
