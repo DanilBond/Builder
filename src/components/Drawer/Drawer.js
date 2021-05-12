@@ -21,8 +21,6 @@ const Drawer = ({img, imgStyle, loaderStyle, setImgStyle, setLoaderStyle}) => {
 
     return ( 
         <div className={classes.Drawer}>
-            
-            
             <span>
                 <img src={img} alt="" style={imgStyle} onLoad={onLoadedEvent} className={classes.Anim}/>
         </span>

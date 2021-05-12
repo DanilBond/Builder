@@ -1,6 +1,7 @@
+import DrawerBurger from "../Drawer/DrawerBurger";
 import classes from "./Nav.module.css";
 
-const Nav = ({setWindowState, windowState}) => {
+const Nav = ({setWindowState, windowState, setDrawerState, state}) => {
     return ( 
         <div className={classes.Nav}>
             {/* <img src={logo} alt=""/> */}
@@ -10,6 +11,7 @@ const Nav = ({setWindowState, windowState}) => {
                 {/* <a href=''>BUILDER</a> */}
                 <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
             </h3>
+            
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}
                 <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>ORDER</div>
@@ -17,6 +19,7 @@ const Nav = ({setWindowState, windowState}) => {
                 {/* <div>BUILDER</div>
                 <div>ORDER</div> */}
             </div>
+            <DrawerBurger state={state} setDrawerState={setDrawerState}/>
         </div>
      );
 }

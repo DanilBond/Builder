@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Price from "../Price/Price";
 import Modal from "../Modal/Modal";
 import Builder from "../Builder/Builder";
+import DrawerMobile from "../Drawer/DrawerMobile";
 
 
 const Layout = ({mouseData}) => {
@@ -31,6 +32,7 @@ const Layout = ({mouseData}) => {
     });
 
     let [price, setPrice] = useState(0);
+    let [DrawerState, setDrawerState] = useState(false);
     let [windowState, setWindowState] = useState("Hide");
    // let [orderObj, setOrderObj] = useState({});
     let [selected, setSelected] = useState({type:"", name:"", price:""});
@@ -44,11 +46,6 @@ const Layout = ({mouseData}) => {
         {type:"power",name:"Select power",price:0,},
         {type:"audio",name:"Select audio",price:0,},
     ]);
-    useEffect(()=>{
-        
-        
-        
-    },[orderObj])
 
      function onStartLoadingEvent(){
          setLoaderStyle({
@@ -67,14 +64,17 @@ const Layout = ({mouseData}) => {
 
      }
 
+     
+
 
     return (
     <div className={classes.Layout}>
         
         <LinesData mouseData={mouseData}/>
-        <Nav setWindowState={setWindowState} windowState={windowState}/>
+        <Nav setWindowState={setWindowState} windowState={windowState} setDrawerState={setDrawerState} state={DrawerState}/>
         <Builder setOrderObj={setOrderObj} setTotalPrice={setPrice} orderObj={orderObj}/>
         <Drawer img={img} loaderStyle={loaderStyle} imgStyle={imgStyle} setImgStyle={setImgStyle} setLoaderStyle={setLoaderStyle}/>
+        <DrawerMobile state={DrawerState}/>
         <Modal state={windowState} setWindowState={setWindowState} orderObj={orderObj} TotalPrice={price}/>
         <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj}/>
         

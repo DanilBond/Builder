@@ -59,3 +59,19 @@
     background-position: bottom;
     color: #000;
 }
+@media only screen and (max-width: 600px) {
+    .underline{
+        font-size: 25px;
+    }
+    .logo{
+        font-size: 35px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .underline{
+        display: none;
+    }
+    .logo{
+        font-size: 30px;
+    }
+  }
