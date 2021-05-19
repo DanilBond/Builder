@@ -35,6 +35,7 @@
 .Parent{
     width: 600px;
     margin: 0 auto;
+    padding: 0 10px;
     height: 510px;
     border-radius: 30px 30px;
     background: rgba(0, 0, 0, 0.7);
@@ -60,6 +61,7 @@
     justify-content: center;
     font-size: 30px;
     margin: 15px 0;
+    text-align: center;
 }
 .BackgroundOrder{
     background-color: rgba(255, 255, 255, 0.15);
@@ -73,6 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 100px;
 }
 .Order{
     font-size: 25px;
@@ -105,5 +108,40 @@
     100% {
       width: 0;
       height: 0;
+    }
+}
+@media only screen and (max-width:1100px) {
+    .TotalPrice{
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width:845px) {
+    .Info{
+        width: 250px;
+        left: 32%;
+    }
+}
+@media only screen and (max-width:650px) {
+    .Parent{
+        width: 500px;
+    }
+    .Info{
+        left: 30%;
+    }
+}
+@media only screen and (max-width:520px) {
+    .Parent{
+        width: 400px;
+    }
+    .Info{
+        left: 25%;
+    }
+}
+@media only screen and (max-width:425px) {
+    .Parent{
+        width: 300px;
+    }
+    .Info{
+        left: 12%;
     }
 }

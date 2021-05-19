@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import classes from "./DrawerMobile.module.css";
 
-const DrawerMobile = ({state}) => {
+const DrawerMobile = ({state, setDrawerState}) => {
     let [Drawer, setDrawer] = useState(<></>)
     useEffect(function(){
         if(state){
-            setDrawer(<><div className={classes.DrawerBackdropOpen}>
+            setDrawer(<><div className={classes.DrawerBackdropOpen} onClick={function(){setDrawerState(false)}}>
                 <div className={classes.DrawerMobileOpen}></div>
                 </div></>)
         }
@@ -16,9 +16,6 @@ const DrawerMobile = ({state}) => {
         }
     },[state]);
     return ( 
-    // <div className={classes.DrawerBackdropOpen}>
-    //     <div className={classes.DrawerMobileOpen}></div>
-    // </div> 
     <>
     {Drawer}
     </>
