@@ -46,9 +46,7 @@
     margin-top: 75px;
 }
 .Info{
-    position: absolute;
-    top: 15px;
-    left: 37.5%;
+    
     width: 25%;
     height: 125px;
     background: rgba(0, 0, 0, 0.7);
@@ -87,7 +85,11 @@
     background-color: rgba(255, 255, 255, 0.3);
     cursor: pointer;
 }
-
+.InfoBack{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 @keyframes scale-up-top {
     0% {
@@ -118,30 +120,21 @@
 @media only screen and (max-width:845px) {
     .Info{
         width: 250px;
-        left: 32%;
+       
     }
 }
 @media only screen and (max-width:650px) {
     .Parent{
         width: 500px;
     }
-    .Info{
-        left: 30%;
-    }
 }
 @media only screen and (max-width:520px) {
     .Parent{
         width: 400px;
     }
-    .Info{
-        left: 25%;
-    }
 }
 @media only screen and (max-width:425px) {
     .Parent{
         width: 300px;
-    }
-    .Info{
-        left: 12%;
     }
 }
