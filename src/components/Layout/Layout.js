@@ -12,7 +12,7 @@ import DrawerMobile from "../Drawer/DrawerMobile";
 
 
 const Layout = ({mouseData}) => {
-    let [img, setImg] = useState('https://i.ibb.co/p3WXkTF/black.png');
+    let [img, setImg] = useState('https://danil-bondarev.netlify.app/static/media/i5.png');
 
     let [loaderStyle, setLoaderStyle] = useState({
         width: "100%",
