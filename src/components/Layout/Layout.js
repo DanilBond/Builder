@@ -9,10 +9,11 @@ import Price from "../Price/Price";
 import Modal from "../Modal/Modal";
 import Builder from "../Builder/Builder";
 import DrawerMobile from "../Drawer/DrawerMobile";
+import im from "../../images/Images/Cyber/CPU/i5.png"
 
 
 const Layout = ({mouseData}) => {
-    let [img, setImg] = useState('https://danil-bondarev.netlify.app/static/media/i5.png');
+    let [img, setImg] = useState('https://i.ibb.co/p3WXkTF/black.png');
 
     let [loaderStyle, setLoaderStyle] = useState({
         width: "100%",
@@ -79,7 +80,7 @@ const Layout = ({mouseData}) => {
         <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj}/>
         
         <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected}/>
-        
+        <img src={im} alt=""/>
     </div> );
 }
 
