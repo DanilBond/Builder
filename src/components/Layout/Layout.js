@@ -9,6 +9,7 @@ import Price from "../Price/Price";
 import Modal from "../Modal/Modal";
 import Builder from "../Builder/Builder";
 import DrawerMobile from "../Drawer/DrawerMobile";
+import i5 from "../../images/Images/Cyber/CPU/i5.png"
 import i7 from "../../images/Images/Cyber/CPU/i7.png"
 import i9 from "../../images/Images/Cyber/CPU/i9.png"
 import bl from "../../images/Images/Cyber/Exterior/black.png"
@@ -110,6 +111,7 @@ const Layout = ({mouseData}) => {
         <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj}/>
         
         <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected}/>
+        <img src={i5} alt=""/>
         <img src={i7} alt=""/>
         <img src={i9} alt=""/>
         <img src={bl} alt=""/>
