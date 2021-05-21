@@ -110,7 +110,7 @@ const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected}) => {
                     break;
 
             }
-            console.log("Request");
+            console.log(result);
           }
           )
           .catch((error) => {

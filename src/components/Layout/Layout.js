@@ -10,7 +10,6 @@ import Modal from "../Modal/Modal";
 import Builder from "../Builder/Builder";
 import DrawerMobile from "../Drawer/DrawerMobile";
 
-
 const Layout = ({mouseData}) => {
     let [img, setImg] = useState('https://i.ibb.co/p3WXkTF/black.png');
 
