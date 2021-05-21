@@ -30,6 +30,7 @@ const Modal = ({state, setWindowState, orderObj, TotalPrice}) => {
 
     return ( 
         <div className={ClassName} onClick={()=>{setWindowState("Close");}}>
+            
             <div className={classes.InfoBack}>
             <div className={classes.Info}>
                 <div className={classes.TotalPrice}>Total: {TotalPrice} $

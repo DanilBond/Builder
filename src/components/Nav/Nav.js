@@ -25,3 +25,4 @@ const Nav = ({setWindowState, windowState, setDrawerState, state}) => {
 }
  
 export default Nav;
+//https://danil-bondarev.netlify.app/static/media/i3.png
