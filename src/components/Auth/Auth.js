@@ -6,6 +6,7 @@ import SignUp from "./SignUp";
 
 const Auth = () => {
 
+    let [user, setUser] = useState('');
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
     const handleSignIn = () =>{
@@ -26,6 +27,25 @@ const Auth = () => {
         })
         
     }
+
+    const handleLogout=()=>{
+        fire.auth().signOut();
+    }
+
+    const authListener = () => {
+        fire.auth().onAuthStateChanged(u => {
+            if(u){
+                setUser(u.uid);
+            }else{
+                setUser("");
+            }
+        })
+    }
+
+    useEffect(()=>{
+        authListener();
+        console.log(user);
+    },[]);
 
     return ( 
         <div className={classes.Auth}>
@@ -59,6 +79,15 @@ const Auth = () => {
                 handleSignUp()
             }}><SignUp/></div>
             </div>
+
+            <div onClick={()=>{handleLogout();}}>
+            Logout
+            </div>
+
+            <div onClick={()=>{console.log(user);}}>
+            GetInfo
+            </div>
+
             </form>
         </div>
      );
