@@ -1,18 +1,20 @@
 import Nav from "../Nav/Nav";
 import classes from "./Layout.module.css";
 
+import { Route, Switch } from 'react-router';
+import Checkout from '../Modal/Modal';
+import Price from '../Price/Price';
 import Drawer from "../Drawer/Drawer";
 import LinesData from "../Lines/LinesData";
 import Controls from "../Controls/Controls";
 import { useEffect, useState } from "react";
-import Price from "../Price/Price";
-import Modal from "../Modal/Modal";
 import Builder from "../Builder/Builder";
 import DrawerMobile from "../Drawer/DrawerMobile";
+import Modal from "../Modal/Modal";
 
-const Layout = ({mouseData}) => {
+const Layout = () => {
     let [img, setImg] = useState('https://i.ibb.co/p3WXkTF/black.png');
-
+    let [mouseData, setMouseData] = useState({})
     let [loaderStyle, setLoaderStyle] = useState({
         width: "100%",
         position: "absolute",
@@ -69,7 +71,7 @@ const Layout = ({mouseData}) => {
 
 
     return (
-    <div className={classes.Layout}>
+    <div className={classes.Layout} onMouseMove={(arg)=>{ setMouseData(arg);}}>
         
         <LinesData mouseData={mouseData}/>
         <Nav setWindowState={setWindowState} windowState={windowState} setDrawerState={setDrawerState} state={DrawerState} theme={theme} settheme={setTheme}/>
@@ -80,7 +82,10 @@ const Layout = ({mouseData}) => {
         <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj} theme={theme}/>
         
         <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected} theme={theme}/>
+        
     </div> );
+
+
 }
 
 export default Layout;

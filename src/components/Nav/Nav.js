@@ -17,7 +17,7 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}
-                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>ORDER</div>
+                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>CHECKOUT</div>
             </h3>
                 {/* <div>BUILDER</div>
                 <div>ORDER</div> */}
@@ -39,7 +39,7 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}
-                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>ORDER</div>
+                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>CHECKOUT</div>
             </h3>
                 {/* <div>BUILDER</div>
                 <div>ORDER</div> */}
