@@ -1,0 +1,22 @@
+.SignUp{
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    width: 125px;
+    height: 35px;
+    font-size: 20px;
+    
+  
+}
+.SignIn{
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    width: 125px;
+    height: 35px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
