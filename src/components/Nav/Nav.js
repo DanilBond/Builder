@@ -1,15 +1,18 @@
-import Switch from "./Switch/Switch";
+import SwitchTheme from "./Switch/Switch";
 import DrawerBurger from "../Drawer/DrawerBurger";
 import classes from "./Nav.module.css";
 import { useEffect, useState } from "react";
+import { Link, Route, Switch } from "react-router-dom";
 
 const Nav = ({setWindowState, windowState, setDrawerState, state, theme, settheme}) => {
+    
+
     let Dark = <>
     <div className={classes.Nav}>
             {/* <img src={logo} alt=""/> */}
             <div className={classes.logo}>PCBUILDER</div>
             <div className={classes.RightSide}>
-            <Switch theme={theme} settheme={settheme}/>
+            <SwitchTheme theme={theme} settheme={settheme}/>
             <h3 className={classes.menubutton}>
                 {/* <a href=''>BUILDER</a> */}
                 <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
@@ -18,11 +21,13 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}
                 <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>CHECKOUT</div>
+                
             </h3>
                 {/* <div>BUILDER</div>
                 <div>ORDER</div> */}
             </div>
             <DrawerBurger state={state} setDrawerState={setDrawerState}/>
+            
         </div>
     </>
 
@@ -31,7 +36,7 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             {/* <img src={logo} alt=""/> */}
             <div className={classes.logo}>PCBUILDER</div>
             <div className={classes.RightSide}>
-            <Switch theme={theme} settheme={settheme}/>
+            <SwitchTheme theme={theme} settheme={settheme}/>
             <h3 className={classes.menubutton}>
                 {/* <a href=''>BUILDER</a> */}
                 <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>

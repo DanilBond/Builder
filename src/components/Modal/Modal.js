@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ModalPart from "../ModalPart/ModalPart";
 import classes from "./Modal.module.css";
 
@@ -37,7 +38,8 @@ const Modal = ({state, setWindowState, orderObj, TotalPrice, theme}) => {
                 <div className={classes.TotalPrice}>Total: {TotalPrice} $
             </div>
             <div className={classes.BackgroundOrder}>
-                    <div className={classes.Order}>Order</div>
+                    
+                    <Link className={classes.Link} to="/checkout"><div className={classes.Order}>Order</div></Link>
                 </div>
             </div>
                 

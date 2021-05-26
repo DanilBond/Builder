@@ -121,6 +121,9 @@
     display: flex;
     justify-content: center;
 }
+.Link{
+    text-decoration: none;
+}
 
 @keyframes scale-up-top {
     0% {

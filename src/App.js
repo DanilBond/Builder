@@ -15,7 +15,7 @@ function App() {
   {/* <Layout mouseData={mouseData}/> */}
   <Switch>
         <Route path="/" exact component={() => <Layout/>} />
-        <Route path="/modal"  component={() => <Checkout />} />
+        <Route path="/checkout"  component={() => <Checkout />} />
         
         <Redirect to="/" />
       </Switch>
