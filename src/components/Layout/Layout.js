@@ -46,6 +46,8 @@ const Layout = ({mouseData}) => {
         {type:"audio",name:"Select audio",price:0,},
     ]);
 
+    let [theme, setTheme] = useState(true);
+
      function onStartLoadingEvent(){
          setLoaderStyle({
              width: "100%",
@@ -70,14 +72,14 @@ const Layout = ({mouseData}) => {
     <div className={classes.Layout}>
         
         <LinesData mouseData={mouseData}/>
-        <Nav setWindowState={setWindowState} windowState={windowState} setDrawerState={setDrawerState} state={DrawerState}/>
+        <Nav setWindowState={setWindowState} windowState={windowState} setDrawerState={setDrawerState} state={DrawerState} theme={theme} settheme={setTheme}/>
         <Builder setOrderObj={setOrderObj} setTotalPrice={setPrice} orderObj={orderObj}/>
         <Drawer img={img} loaderStyle={loaderStyle} imgStyle={imgStyle} setImgStyle={setImgStyle} setLoaderStyle={setLoaderStyle}/>
         <DrawerMobile state={DrawerState} setDrawerState={setDrawerState}/>
-        <Modal state={windowState} setWindowState={setWindowState} orderObj={orderObj} TotalPrice={price}/>
-        <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj}/>
+        <Modal state={windowState} setWindowState={setWindowState} orderObj={orderObj} TotalPrice={price} theme={theme}/>
+        <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj} theme={theme}/>
         
-        <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected}/>
+        <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected} theme={theme}/>
     </div> );
 }
 

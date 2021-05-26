@@ -16,7 +16,10 @@ import ComponentCountable from "../Componentitem/ComponentCountable";
 
 
 
-const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected}) => {
+const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected, theme}) => {
+
+    let Classes = [classes.Controls, theme ? classes.Controls : classes.ControlsLight];
+
     let [componentType, setComponentType] = useState("Select part");
     let [exterior, setExterior] = useState([]);
     let [cpu, setCpu] = useState([]);
@@ -116,13 +119,14 @@ const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected}) => {
           .catch((error) => {
               console.log(error);
           })
+         
         },[componentType]);
 
     
 
     return (
         <div className={classes.ControlPanels}>
-            <div className={classes.Controls}>
+            <div className={Classes.join(" ")}>
                     
                 <div onClick={()=>{setComponentType("Exterior");}}>
                     <Componentitem img={systemBlock} name="Exterior" classes={classes}/>
@@ -161,7 +165,7 @@ const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected}) => {
 
             
 
-            <div className={classes.Controls}>      
+            <div className={Classes.join(" ")}>      
                 <div className={classes.NameBack}>              
                     <div className={classes.Name}>{componentType}</div>
                 </div>                

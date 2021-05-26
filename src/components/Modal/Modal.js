@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import ModalPart from "../ModalPart/ModalPart";
 import classes from "./Modal.module.css";
 
-const Modal = ({state, setWindowState, orderObj, TotalPrice}) => {
+const Modal = ({state, setWindowState, orderObj, TotalPrice, theme}) => {
     let[ClassName, setClassName] = useState(classes.ModalHide);
-
+    let Classes = [classes.Parent, theme ? classes.Parent : classes.ParentLight];
+    let ClassesInfo = [classes.Info, theme ? classes.Info : classes.InfoLight];
     useEffect(()=>{
         switch(state){
             case "Open":
@@ -32,7 +33,7 @@ const Modal = ({state, setWindowState, orderObj, TotalPrice}) => {
         <div className={ClassName} onClick={()=>{setWindowState("Close");}}>
             
             <div className={classes.InfoBack}>
-            <div className={classes.Info}>
+            <div className={ClassesInfo.join(" ")}>
                 <div className={classes.TotalPrice}>Total: {TotalPrice} $
             </div>
             <div className={classes.BackgroundOrder}>
@@ -41,7 +42,7 @@ const Modal = ({state, setWindowState, orderObj, TotalPrice}) => {
             </div>
                 
             </div>
-            <div className={classes.Parent}>
+            <div className={Classes.join(" ")}>
             <div className={classes.Items}>
             {results}
             </div>

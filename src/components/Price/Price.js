@@ -1,8 +1,12 @@
 import { useEffect } from "react";
 import classes from "./Price.module.css";
 
-const Price = ({price, setWindowState, selected, setOrderObj, orderObj}) => {
+const Price = ({price, setWindowState, selected, setOrderObj, orderObj, theme}) => {
     
+    let ClassesPrice = [classes.Background, theme ? classes.Background : classes.BackgroundLight];
+    let ClassesOrder = [classes.BackgroundOrder, theme ? classes.BackgroundOrder : classes.BackgroundOrderLight];
+    let ClassesAdd = [classes.BackgroundAdd, theme ? classes.BackgroundAdd : classes.BackgroundAddLight];
+
     useEffect(function(){
        // Object.values(orderObj).map((i) => {setPrice(price+=i.price);});
     },[orderObj]);
@@ -10,7 +14,7 @@ const Price = ({price, setWindowState, selected, setOrderObj, orderObj}) => {
     return (
         <>
         <div className={classes.Price}>
-            <div className={classes.BackgroundAdd}>
+            <div className={ClassesAdd.join(" ")}>
                 <div className={classes.Add} onClick={()=>{
                     switch(selected.type){
                         case "exterior":
@@ -119,10 +123,10 @@ const Price = ({price, setWindowState, selected, setOrderObj, orderObj}) => {
                     }
                 }}>Add</div>
             </div>
-            <div className={classes.Background}>
+            <div className={ClassesPrice.join(" ")}>
                 <div className={classes.Text}>Price: {price} ₽</div>
             </div>
-            <div className={classes.BackgroundOrder} onClick={()=>{setWindowState("Open")}}>
+            <div className={ClassesOrder.join(" ")} onClick={()=>{setWindowState("Open")}}>
                 <div className={classes.Order}>Order</div>
             </div>
         </div>

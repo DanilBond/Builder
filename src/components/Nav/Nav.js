@@ -1,12 +1,15 @@
+import Switch from "./Switch/Switch";
 import DrawerBurger from "../Drawer/DrawerBurger";
 import classes from "./Nav.module.css";
+import { useEffect, useState } from "react";
 
-const Nav = ({setWindowState, windowState, setDrawerState, state}) => {
-    return ( 
-        <div className={classes.Nav}>
+const Nav = ({setWindowState, windowState, setDrawerState, state, theme, settheme}) => {
+    let Dark = <>
+    <div className={classes.Nav}>
             {/* <img src={logo} alt=""/> */}
             <div className={classes.logo}>PCBUILDER</div>
             <div className={classes.RightSide}>
+            <Switch theme={theme} settheme={settheme}/>
             <h3 className={classes.menubutton}>
                 {/* <a href=''>BUILDER</a> */}
                 <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
@@ -21,6 +24,41 @@ const Nav = ({setWindowState, windowState, setDrawerState, state}) => {
             </div>
             <DrawerBurger state={state} setDrawerState={setDrawerState}/>
         </div>
+    </>
+
+    let Light = <>
+    <div className={classes.NavLight}>
+            {/* <img src={logo} alt=""/> */}
+            <div className={classes.logo}>PCBUILDER</div>
+            <div className={classes.RightSide}>
+            <Switch theme={theme} settheme={settheme}/>
+            <h3 className={classes.menubutton}>
+                {/* <a href=''>BUILDER</a> */}
+                <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
+            </h3>
+            
+            <h3 className={classes.menubutton}>
+                {/* <a href=''>ORDER</a> */}
+                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>ORDER</div>
+            </h3>
+                {/* <div>BUILDER</div>
+                <div>ORDER</div> */}
+            </div>
+            <DrawerBurger state={state} setDrawerState={setDrawerState}/>
+        </div>
+    </>
+    let [Result, setResult] = useState(<></>);
+    useEffect(function(){
+        if(theme == true){
+            setResult(Dark);
+        }
+        if(theme == false){
+            setResult(Light);
+        }
+        console.log(theme);
+    }, [theme]);
+    return ( 
+        <>{Result}</>
      );
 }
  

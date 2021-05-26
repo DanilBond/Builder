@@ -15,7 +15,7 @@ const Drawer = ({img, imgStyle, loaderStyle, setImgStyle, setLoaderStyle}) => {
             width: '800px',
             height: '424px',
             filter: 'drop-shadow(0 0 15px rgba(0, 0, 0, 1))',
-            
+            pointerEvents:'none',
         });
     }
 

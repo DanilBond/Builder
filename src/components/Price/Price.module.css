@@ -19,6 +19,22 @@
     justify-content: center;
     transition: width;
     transition-duration: 1s;
+    transition: background;
+    transition-duration: .1s;
+}
+.BackgroundLight{
+    background-color: rgba(255, 255, 255, 0.2);
+    width: auto;
+    height: 50px;
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width;
+    transition-duration: 1s;
+    transition: background;
+    transition-duration: .1s;
 }
 .Text{
     display: flex;
@@ -38,6 +54,23 @@
     transition: width background-color;
     transition-duration: .05s;
     margin-left: 10px;
+    transition: background;
+    transition-duration: .1s;
+}
+.BackgroundOrderLight{
+    background-color: rgba(255, 255, 255, 0.2);
+    width: auto;
+    height: 50px;
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width background-color;
+    transition-duration: .05s;
+    margin-left: 10px;
+    transition: background;
+    transition-duration: .1s;
 }
 .Order{
     padding: 0 10px;
@@ -61,6 +94,23 @@
     transition: width background-color;
     transition-duration: .05s;
     margin-right: 10px;
+    transition: background;
+    transition-duration: .1s;
+}
+.BackgroundAddLight{
+    background-color: rgba(255, 255, 255, 0.2);
+    width: auto;
+    height: 50px;
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width background-color;
+    transition-duration: .05s;
+    margin-right: 10px;
+    transition: background;
+    transition-duration: .1s;
 }
 .Add{
     padding: 0 10px;
