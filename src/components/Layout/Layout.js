@@ -82,7 +82,7 @@ const Layout = ({store}) => {
         <Modal state={windowState} setWindowState={setWindowState} orderObj={orderObj} TotalPrice={price} theme={theme}/>
         <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj} theme={theme}/>
 
-        <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected} theme={theme}/>
+        <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected} theme={theme} settheme={setTheme}/>
 
 
 

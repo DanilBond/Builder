@@ -6,8 +6,10 @@ const Switch = ({theme, settheme}) => {
         <div className={classes.Parent}>
             <input className={classes.Switch} type="checkbox" id="switch" 
             onClick={function(){
-                settheme(!theme);
-                console.log(theme);
+                let res = !theme;
+                
+                localStorage.setItem("theme", res);
+                settheme(res);
                 // store.dispatch({ type: 'ADD_THEME', theme: !store.getState() });
                 // console.log(store.getState());
             }

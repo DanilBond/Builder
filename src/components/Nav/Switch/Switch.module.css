@@ -32,13 +32,13 @@
 	height: 20px;
 	background: black;
 	border-radius: 90px;
-	transition: 0.3s;
+	transition: 0.2s;
 }
 
 .Switch:checked + label {
 	background: black;
 	transition: background;
-	transition-duration: .1s;
+	transition-duration: .01s;
 }
 
 .Switch:checked + label:after {
@@ -47,6 +47,15 @@
 .Switch:checked + label:after {
 	transform: translateX(100%);
 	background: white;
+}
+
+.Dark{
+	transform: translateX(100%);
+	background: white;
+}
+
+.Light{
+	transform: translateX(100%);
 }
 @media only screen and (max-width: 720px) {
     .label {

@@ -49,8 +49,17 @@ useEffect(function(){
     if(theme == false){
         setResult(Light);
     }
-    console.log(theme);
+    
 }, [theme]);
+
+useEffect(function(){
+    if(localStorage.getItem("theme") == "true"){
+        setResult(Dark);
+    }
+    if(localStorage.getItem("theme") == "false"){
+        setResult(Light);
+    }
+}, []);
     // let Dark = <>
     // <div className={classes.Nav}>
     //         {/* <img src={logo} alt=""/> */}

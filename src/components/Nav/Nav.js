@@ -62,8 +62,17 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
         if(theme == false){
             setResult(Light);
         }
-        console.log(theme);
+       
     }, [theme]);
+
+    useEffect(function(){
+        if(localStorage.getItem("theme") == "true"){
+            setResult(Dark);
+        }
+        if(localStorage.getItem("theme") == "false"){
+            setResult(Light);
+        }
+    }, []);
 
     
     return ( 

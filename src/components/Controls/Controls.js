@@ -16,10 +16,20 @@ import ComponentCountable from "../Componentitem/ComponentCountable";
 
 
 
-const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected, theme}) => {
+const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected, theme, settheme}) => {
 
     let Classes = [classes.Controls, theme ? classes.Controls : classes.ControlsLight];
-
+    useEffect(function(){
+        if(localStorage.getItem("theme") == "false"){
+            Classes = classes.ControlsLight;
+            settheme(false);
+        }
+        if(localStorage.getItem("theme") == "true"){
+            Classes = classes.Controls;
+            settheme(true);
+        }
+        console.log(localStorage.getItem("theme"), theme);
+    }, []);
 
     let [componentType, setComponentType] = useState("Select part");
     let [exterior, setExterior] = useState([]);
