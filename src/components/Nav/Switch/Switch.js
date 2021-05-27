@@ -1,11 +1,17 @@
 import classes from "./Switch.module.css";
 
+
 const Switch = ({theme, settheme}) => {
     return ( 
         <div className={classes.Parent}>
-            <input className={classes.Switch} type="checkbox" id="switch" onClick={function(){
+            <input className={classes.Switch} type="checkbox" id="switch" 
+            onClick={function(){
                 settheme(!theme);
-            }}/><label className={classes.label} for="switch">Toggle</label>
+                console.log(theme);
+                // store.dispatch({ type: 'ADD_THEME', theme: !store.getState() });
+                // console.log(store.getState());
+            }
+        }/><label className={classes.label} for="switch">Toggle</label>
         </div>
      );
 }

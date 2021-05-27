@@ -13,7 +13,7 @@ import DrawerMobile from "../Drawer/DrawerMobile";
 import Modal from "../Modal/Modal";
 import Auth from "../Auth/Auth";
 
-const Layout = () => {
+const Layout = ({store}) => {
     let [img, setImg] = useState('https://i.ibb.co/p3WXkTF/black.png');
     let [mouseData, setMouseData] = useState({})
     let [loaderStyle, setLoaderStyle] = useState({
@@ -68,24 +68,24 @@ const Layout = () => {
 
      }
 
-     
+
 
 
     return (
     <div className={classes.Layout} onMouseMove={(arg)=>{ setMouseData(arg);}}>
          <Auth/>
         <LinesData mouseData={mouseData}/>
-        <Nav setWindowState={setWindowState} windowState={windowState} setDrawerState={setDrawerState} state={DrawerState} theme={theme} settheme={setTheme}/>
+        <Nav setWindowState={setWindowState} windowState={windowState} setDrawerState={setDrawerState} state={DrawerState} theme={theme} settheme={setTheme} store={store}/>
         <Builder setOrderObj={setOrderObj} setTotalPrice={setPrice} orderObj={orderObj}/>
         <Drawer img={img} loaderStyle={loaderStyle} imgStyle={imgStyle} setImgStyle={setImgStyle} setLoaderStyle={setLoaderStyle}/>
         <DrawerMobile state={DrawerState} setDrawerState={setDrawerState}/>
         <Modal state={windowState} setWindowState={setWindowState} orderObj={orderObj} TotalPrice={price} theme={theme}/>
         <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj} theme={theme}/>
-       
+
         <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected} theme={theme}/>
 
-        
-        
+
+
     </div> );
 
 

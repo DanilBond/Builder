@@ -35,7 +35,7 @@ const Auth = () => {
     const authListener = () => {
         fire.auth().onAuthStateChanged(u => {
             if(u){
-                setUser(u.uid);
+                setUser(u);
             }else{
                 setUser("");
             }
@@ -44,8 +44,14 @@ const Auth = () => {
 
     useEffect(()=>{
         authListener();
-        console.log(user);
     },[]);
+
+    useEffect(()=>{
+        if(user){
+            console.log('Sucsess', user.uid);
+        }
+    },[user])
+
 
     return ( 
         <div className={classes.Auth}>

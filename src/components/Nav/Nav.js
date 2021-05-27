@@ -12,7 +12,7 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             {/* <img src={logo} alt=""/> */}
             <div className={classes.logo}>PCBUILDER</div>
             <div className={classes.RightSide}>
-            <SwitchTheme theme={theme} settheme={settheme}/>
+            <SwitchTheme theme={theme} settheme={settheme} theme={theme}/>
             <h3 className={classes.menubutton}>
                 {/* <a href=''>BUILDER</a> */}
                 <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
@@ -36,7 +36,7 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             {/* <img src={logo} alt=""/> */}
             <div className={classes.logo}>PCBUILDER</div>
             <div className={classes.RightSide}>
-            <SwitchTheme theme={theme} settheme={settheme}/>
+            <SwitchTheme theme={theme} settheme={settheme} theme={theme}/>
             <h3 className={classes.menubutton}>
                 {/* <a href=''>BUILDER</a> */}
                 <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
@@ -52,7 +52,9 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             <DrawerBurger state={state} setDrawerState={setDrawerState}/>
         </div>
     </>
-    let [Result, setResult] = useState(<></>);
+    let [Result, setResult] = useState(Dark);
+
+
     useEffect(function(){
         if(theme == true){
             setResult(Dark);
@@ -62,6 +64,8 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
         }
         console.log(theme);
     }, [theme]);
+
+    
     return ( 
         <>{Result}</>
      );

@@ -20,6 +20,7 @@ const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected, theme}
 
     let Classes = [classes.Controls, theme ? classes.Controls : classes.ControlsLight];
 
+
     let [componentType, setComponentType] = useState("Select part");
     let [exterior, setExterior] = useState([]);
     let [cpu, setCpu] = useState([]);

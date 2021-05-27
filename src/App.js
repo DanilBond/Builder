@@ -7,15 +7,16 @@ import Checkout from './components/Checkout/Checkout';
 
 
 
-function App() {
+function App({store}) {
+
   
   return (
     <div className="App">
     
   {/* <Layout mouseData={mouseData}/> */}
   <Switch>
-        <Route path="/" exact component={() => <Layout/>} />
-        <Route path="/checkout"  component={() => <Checkout />} />
+        <Route path="/" exact component={() => <Layout store={store}/>} />
+        <Route path="/checkout"  component={() => <Checkout store={store} />} />
         
         <Redirect to="/" />
       </Switch>

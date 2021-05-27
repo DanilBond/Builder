@@ -4,12 +4,12 @@ import classes from "./CheckoutNav.module.css";
 import SwitchTheme from "./Switch/Switch";
 
 const CheckoutNav = ({theme, settheme}) => {
-    let [Result, setResult] = useState(<></>);
+    
     let Dark = <>
     <div className={classes.Nav}>
             <div className={classes.logo}>PCBUILDER</div>
             <div className={classes.RightSide}>
-            <SwitchTheme theme={theme} settheme={settheme}/>
+            <SwitchTheme theme={theme} settheme={settheme}theme={theme}/>
             <h3 className={classes.menubutton}>
             <Link className={classes.Link} to="/"><div className={classes.underline} >BUILDER</div></Link>
             </h3>
@@ -27,7 +27,7 @@ const CheckoutNav = ({theme, settheme}) => {
     <div className={classes.NavLight}>
             <div className={classes.logo}>PCBUILDER</div>
             <div className={classes.RightSide}>
-            <SwitchTheme theme={theme} settheme={settheme}/>
+            <SwitchTheme theme={theme} settheme={settheme} theme={theme}/>
             <h3 className={classes.menubutton}>
             <Link className={classes.Link} to="/"><div className={classes.underline} >BUILDER</div></Link>
             </h3>
@@ -41,16 +41,16 @@ const CheckoutNav = ({theme, settheme}) => {
             
         </div>
     </>;
-
-     useEffect(function(){
-         if(theme == true){
-             setResult(Dark);
-         }
-         if(theme == false){
-             setResult(Light);
-         }
-         console.log(theme);
-     }, [theme]);
+let [Result, setResult] = useState(Dark);
+useEffect(function(){
+    if(theme == true){
+        setResult(Dark);
+    }
+    if(theme == false){
+        setResult(Light);
+    }
+    console.log(theme);
+}, [theme]);
     // let Dark = <>
     // <div className={classes.Nav}>
     //         {/* <img src={logo} alt=""/> */}
