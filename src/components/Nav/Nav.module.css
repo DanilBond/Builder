@@ -63,22 +63,39 @@
     background-position: top;
     transition: all .25s ease-out;
     cursor: pointer;
+    font-size: 27px;
 }
+
+    .Show{
+        display: flex;
+        
+    }
+    .Hide{
+        display: none;
+    }
+
+    .ShowLog{
+        display: flex;
+        
+    }
+    .HideLog{
+        display: none;
+    }
 
 .underline:hover {
     background-position: bottom;
     color: #000;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 865px) {
     .underline{
-        font-size: 25px;
+        font-size: 23px;
     }
     .logo{
         font-size: 35px;
     }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 830px) {
     .underline{
         display: none;
     }

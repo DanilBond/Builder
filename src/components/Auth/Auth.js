@@ -30,6 +30,7 @@ const Auth = () => {
 
     const handleLogout=()=>{
         fire.auth().signOut();
+        localStorage.setItem("user", "");
     }
 
     const authListener = () => {
@@ -48,7 +49,7 @@ const Auth = () => {
 
     useEffect(()=>{
         if(user){
-            console.log('Sucsess', user.uid);
+            localStorage.setItem("user", user.uid);
         }
     },[user])
 

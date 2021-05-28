@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import classes from "./Switch.module.css";
 
 
 const Switch = ({theme, settheme}) => {
+
+    
+
     return ( 
         <div className={classes.Parent}>
             <input className={classes.Switch} type="checkbox" id="switch" 

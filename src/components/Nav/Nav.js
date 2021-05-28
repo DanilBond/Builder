@@ -6,9 +6,110 @@ import { Link, Route, Switch } from "react-router-dom";
 
 const Nav = ({setWindowState, windowState, setDrawerState, state, theme, settheme}) => {
     
+    let Classes = [classes.Nav, theme ? classes.Nav : classes.NavLight];
+    let ClassesLogin = [localStorage.getItem("user") ? classes.Show : classes.Hide];
+    let ClassesLogout = [localStorage.getItem("user") ? classes.HideLog : classes.ShowLog];
+    
+    useEffect(function(){
+        if(localStorage.getItem("theme") == "false"){
+            Classes = classes.NavLight;
+           // settheme(false);
+        }
+        if(localStorage.getItem("theme") == "true"){
+            Classes = classes.Nav;
+           // settheme(true);
+        }
+        console.log(localStorage.getItem("theme"), theme);
+    }, []);
 
-    let Dark = <>
-    <div className={classes.Nav}>
+
+    useEffect(function(){
+        if(localStorage.getItem("user") == ""){
+            ClassesLogin = classes.Hide;
+            ClassesLogout = classes.ShowLog;
+           // settheme(false);
+        }
+        if(localStorage.getItem("user") != ""){
+            ClassesLogin = classes.Show;
+            ClassesLogout = classes.HideLog;
+           // settheme(true);
+        }
+    }, []);
+
+    
+
+
+    // let Dark = <>
+    // <div className={classes.Nav}>
+    //         {/* <img src={logo} alt=""/> */}
+    //         <div className={classes.logo}>PCBUILDER</div>
+    //         <div className={classes.RightSide}>
+    //         <SwitchTheme theme={theme} settheme={settheme} theme={theme}/>
+    //         <h3 className={classes.menubutton}>
+    //             {/* <a href=''>BUILDER</a> */}
+    //             <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
+    //         </h3>
+            
+    //         <h3 className={classes.menubutton}>
+    //             {/* <a href=''>ORDER</a> */}
+    //             <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>CHECKOUT</div>
+                
+    //         </h3>
+    //             {/* <div>BUILDER</div>
+    //             <div>ORDER</div> */}
+    //         </div>
+    //         <DrawerBurger state={state} setDrawerState={setDrawerState}/>
+            
+    //     </div>
+    // </>
+
+    // let Light = <>
+    // <div className={classes.NavLight}>
+    //         {/* <img src={logo} alt=""/> */}
+    //         <div className={classes.logo}>PCBUILDER</div>
+    //         <div className={classes.RightSide}>
+    //         <SwitchTheme theme={theme} settheme={settheme} theme={theme}/>
+    //         <h3 className={classes.menubutton}>
+    //             {/* <a href=''>BUILDER</a> */}
+    //             <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
+    //         </h3>
+            
+    //         <h3 className={classes.menubutton}>
+    //             {/* <a href=''>ORDER</a> */}
+    //             <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>CHECKOUT</div>
+    //         </h3>
+    //             {/* <div>BUILDER</div>
+    //             <div>ORDER</div> */}
+    //         </div>
+    //         <DrawerBurger state={state} setDrawerState={setDrawerState}/>
+    //     </div>
+    // </>
+    //let [Result, setResult] = useState(Dark);
+
+
+    // useEffect(function(){
+    //     if(theme == true){
+    //         setResult(Dark);
+    //     }
+    //     if(theme == false){
+    //         setResult(Light);
+    //     }
+       
+    // }, [theme]);
+
+    // useEffect(function(){
+    //     if(localStorage.getItem("theme") == "true"){
+    //         setResult(Dark);
+    //     }
+    //     if(localStorage.getItem("theme") == "false"){
+    //         setResult(Light);
+    //     }
+    // }, []);
+
+    
+    return ( 
+        
+        <div className={Classes.join(" ")}>
             {/* <img src={logo} alt=""/> */}
             <div className={classes.logo}>PCBUILDER</div>
             <div className={classes.RightSide}>
@@ -18,65 +119,41 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
                 <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
             </h3>
             
+            <div className={ClassesLogout.join(" ")}>
+            <h3 className={classes.menubutton}>
+                {/* <a href=''>ORDER</a> */}
+                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>LOGIN</div>
+                
+            </h3>
+            </div>
+
+            <div className={ClassesLogin.join(" ")}>
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}
                 <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>CHECKOUT</div>
                 
             </h3>
-                {/* <div>BUILDER</div>
-                <div>ORDER</div> */}
-            </div>
-            <DrawerBurger state={state} setDrawerState={setDrawerState}/>
             
-        </div>
-    </>
-
-    let Light = <>
-    <div className={classes.NavLight}>
-            {/* <img src={logo} alt=""/> */}
-            <div className={classes.logo}>PCBUILDER</div>
-            <div className={classes.RightSide}>
-            <SwitchTheme theme={theme} settheme={settheme} theme={theme}/>
             <h3 className={classes.menubutton}>
-                {/* <a href=''>BUILDER</a> */}
-                <div className={classes.underline} onClick={()=>{if(windowState != "Hide"){setWindowState("Close");}}}>BUILDER</div>
+                {/* <a href=''>ORDER</a> */}
+                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>ORDERS</div>
+                
             </h3>
             
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}
-                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>CHECKOUT</div>
+                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>LOGOUT</div>
+                
             </h3>
                 {/* <div>BUILDER</div>
                 <div>ORDER</div> */}
             </div>
+            </div>
+
+
             <DrawerBurger state={state} setDrawerState={setDrawerState}/>
+            
         </div>
-    </>
-    let [Result, setResult] = useState(Dark);
-
-
-    useEffect(function(){
-        if(theme == true){
-            setResult(Dark);
-        }
-        if(theme == false){
-            setResult(Light);
-        }
-       
-    }, [theme]);
-
-    useEffect(function(){
-        if(localStorage.getItem("theme") == "true"){
-            setResult(Dark);
-        }
-        if(localStorage.getItem("theme") == "false"){
-            setResult(Light);
-        }
-    }, []);
-
-    
-    return ( 
-        <>{Result}</>
      );
 }
  
