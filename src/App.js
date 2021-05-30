@@ -5,10 +5,12 @@ import Builder from './components/Builder/Builder';
 import Layout from './components/Layout/Layout';
 import Checkout from './components/Checkout/Checkout';
 import Auth from './components/Auth/Auth';
+import Orders from './components/Orders/Orders';
 
 
 
 function App({store}) {
+
 
   
   return (
@@ -17,11 +19,11 @@ function App({store}) {
   {/* <Layout mouseData={mouseData}/> */}
   <Switch>
         <Route path="/" exact component={() => <Layout store={store}/>} />
-        <Route path="/checkout"  component={() => <Checkout store={store} />} />
         <Route path="/auth"  component={() => <Auth/>} />
+        <Route path="/orders"  component={() => <Orders/>} />
         
         <Redirect to="/" />
-      </Switch>
+  </Switch>
       
     </div>
   );

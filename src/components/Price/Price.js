@@ -121,6 +121,7 @@ const Price = ({price, setWindowState, selected, setOrderObj, orderObj, theme}) 
                         ]);    
                         break;
                     }
+                    
                 }}>Add</div>
             </div>
             <div className={ClassesPrice.join(" ")}>

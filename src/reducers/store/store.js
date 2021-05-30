@@ -1,11 +1,8 @@
 import {createStore} from 'redux';
 
 function playlist(state = '', action) {
-  if (action.type === 'ADD_USER') {
-    return action.userId;
-  }
-  if (action.type === 'ADD_THEME') {
-    return action.theme;
+  if (action.type === 'ADD_ORDER') {
+    return action.order;
   }
 }
 // store.subscribe(() => {

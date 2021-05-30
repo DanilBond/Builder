@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ModalPart from "../ModalPart/ModalPart";
 import classes from "./Modal.module.css";
 
-const Modal = ({state, setWindowState, orderObj, TotalPrice, theme}) => {
+const Modal = ({state, setWindowState, orderObj, TotalPrice, theme, setCheckoutVisible}) => {
     let[ClassName, setClassName] = useState(classes.ModalHide);
     let Classes = [classes.Parent, theme ? classes.Parent : classes.ParentLight];
     let ClassesInfo = [classes.Info, theme ? classes.Info : classes.InfoLight];
@@ -25,10 +25,6 @@ const Modal = ({state, setWindowState, orderObj, TotalPrice, theme}) => {
 
     const results = orderObj.map(order => <ModalPart key={order.id} Name={order.name} Price={order.price} {...order} />);
 
-    useEffect(function(){
-        console.log(Object.values(orderObj));
-    },[orderObj]);
-
 
     return ( 
         <div className={ClassName} onClick={()=>{setWindowState("Close");}}>
@@ -37,9 +33,8 @@ const Modal = ({state, setWindowState, orderObj, TotalPrice, theme}) => {
             <div className={ClassesInfo.join(" ")}>
                 <div className={classes.TotalPrice}>Total: {TotalPrice} $
             </div>
-            <div className={classes.BackgroundOrder}>
-                    
-                    <Link className={classes.Link} to="/checkout"><div className={classes.Order}>Order</div></Link>
+            <div className={classes.BackgroundOrder} onClick={()=>{setCheckoutVisible(true)}}>
+                <div className={classes.Order} >Order</div>
                 </div>
             </div>
                 

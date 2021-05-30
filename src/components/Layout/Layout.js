@@ -2,7 +2,6 @@ import Nav from "../Nav/Nav";
 import classes from "./Layout.module.css";
 
 import { Route, Switch } from 'react-router';
-import Checkout from '../Modal/Modal';
 import Price from '../Price/Price';
 import Drawer from "../Drawer/Drawer";
 import LinesData from "../Lines/LinesData";
@@ -12,6 +11,7 @@ import Builder from "../Builder/Builder";
 import DrawerMobile from "../Drawer/DrawerMobile";
 import Modal from "../Modal/Modal";
 import Auth from "../Auth/Auth";
+import Checkout from "../Checkout/Checkout";
 
 const Layout = ({store}) => {
     let [img, setImg] = useState('https://i.ibb.co/p3WXkTF/black.png');
@@ -50,6 +50,9 @@ const Layout = ({store}) => {
     ]);
 
     let [theme, setTheme] = useState(true);
+    let [checkoutVisible,setCheckoutVisible] = useState(false);
+    
+
 
      function onStartLoadingEvent(){
          setLoaderStyle({
@@ -79,9 +82,10 @@ const Layout = ({store}) => {
         <Builder setOrderObj={setOrderObj} setTotalPrice={setPrice} orderObj={orderObj}/>
         <Drawer img={img} loaderStyle={loaderStyle} imgStyle={imgStyle} setImgStyle={setImgStyle} setLoaderStyle={setLoaderStyle}/>
         <DrawerMobile state={DrawerState} setDrawerState={setDrawerState}/>
-        <Modal state={windowState} setWindowState={setWindowState} orderObj={orderObj} TotalPrice={price} theme={theme}/>
+        <Modal setCheckoutVisible={setCheckoutVisible} state={windowState} setWindowState={setWindowState} orderObj={orderObj} TotalPrice={price} theme={theme} store={store}/>
+        <Checkout Visibility={checkoutVisible} setCheckoutVisible={setCheckoutVisible}/>
         <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj} theme={theme}/>
-
+        
         <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected} theme={theme} settheme={setTheme}/>
 
 

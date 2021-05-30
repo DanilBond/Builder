@@ -20,7 +20,7 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             Classes = classes.Nav;
            // settheme(true);
         }
-        console.log(localStorage.getItem("theme"), theme);
+        
     }, []);
 
 
@@ -124,7 +124,7 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}
                 <Link className={classes.Link} to="/auth">
-                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>LOGIN</div>
+                <div className={classes.underline}>LOGIN</div>
                 </Link>
                 
                 
@@ -140,8 +140,10 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}
-                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>ORDERS</div>
                 
+                <Link className={classes.Link} to="/orders">
+                <div className={classes.underline} >ORDERS</div>
+                </Link>
             </h3>
             
             <h3 className={classes.menubutton}>

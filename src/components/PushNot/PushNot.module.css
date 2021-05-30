@@ -17,7 +17,7 @@
     from {right: -250px;}
     to {right: 0px;}
 }
-span{
+.span{
     text-align: center;
     color: white;
 }

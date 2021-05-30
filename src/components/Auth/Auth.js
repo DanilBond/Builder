@@ -92,7 +92,7 @@ const Auth = () => {
         <div className={classes.Back} onMouseMove={(arg)=>{ setMouseData(arg);}}>
      {errorResult}
     <LinesData mouseData={mouseData}/>
-    <CheckoutNav theme={theme} settheme={setTheme} theme={theme}/>
+    <CheckoutNav theme={theme} settheme={setTheme}/>
     <div className={classes.AuthBack}>
         <div className={classes.Auth}>
             <h1>Welcome</h1>

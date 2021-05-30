@@ -28,7 +28,7 @@ const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected, theme,
             Classes = classes.Controls;
             settheme(true);
         }
-        console.log(localStorage.getItem("theme"), theme);
+       
     }, []);
 
     let [componentType, setComponentType] = useState("Select part");
@@ -124,7 +124,7 @@ const Controls = ({setImg, onStartLoadingEvent, setOrderObj, setSelected, theme,
                     break;
 
             }
-            console.log(result);
+           
           }
           )
           .catch((error) => {

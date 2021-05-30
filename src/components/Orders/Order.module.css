@@ -1,0 +1,19 @@
+.Order{
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(7px);
+    box-shadow: 0 0px 10px rgb(0, 0, 0);
+    border-radius: 25px;
+    width: 344px;
+    height: 500px;
+    margin: 20px 20px;
+    padding: 10px 10px;
+}
+.span{
+    font-size: 25px;
+    color: white;
+}
+.Total{
+    display: flex;
+    justify-content: center;
+    
+}
