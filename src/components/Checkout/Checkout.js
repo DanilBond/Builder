@@ -3,6 +3,8 @@ import Nav from "../Nav/Nav";
 import { useEffect, useState } from "react";
 import LinesData from "../Lines/LinesData";
 import CheckoutNav from "../Nav/CheckoutNav";
+import axios from "axios";
+import PushNot from "../PushNot/PushNot";
 
 const Checkout = ({store,orderOBJ,totalPrice, Visibility,setCheckoutVisible}) => {
     let Classes = [classes.Visibility, Visibility ? classes.Visibility : classes.Invisibility];
@@ -13,18 +15,43 @@ const Checkout = ({store,orderOBJ,totalPrice, Visibility,setCheckoutVisible}) =>
     let [name, setName] = useState('');
     let [address, setAddress] = useState('');
     let [phone, setPhone] = useState('');
+    let [errorResult, setErrorResult] = useState(<></>);
+    let [error, setError] = useState('');
 
-    
+    function Order(){
+        if(name != '' && address != '' && phone != ''){
+            axios
+            .post("https://pcbuilder-989af-default-rtdb.firebaseio.com/orders/" + localStorage.getItem("user") + ".json", {
+              name: name,
+              address: address,
+              phone: phone,
+            })
+            .then((response) => {
+              if(response.status == 200){
+                setError("Sucsess");
+                setErrorResult(<PushNot message="Sucsess"/>);
+                let timer = setTimeout(() => {
+                    setError("");
+                    setErrorResult(<></>);
+                    console.log("tm");
+                  }, 3000);
+                 
+              }
+            });
+        }
+    }
 
     return ( 
         <div className={Classes.join(" ")}>
+             
         <div className={classes.Checkout} >
 
 
             <div className={classes.CheckoutBack} >
+            {errorResult}
         <div className={classes.CheckoutPar}>
             <h1>Total:43545$</h1>
-            <form className={classes.Form}>
+            <form className={classes.Form} onSubmit={(e)=>{e.preventDefault();}}>
 
             <input 
             type="text"
@@ -58,8 +85,8 @@ const Checkout = ({store,orderOBJ,totalPrice, Visibility,setCheckoutVisible}) =>
 
 
             <div className={classes.ButtonParent}>
-            <button className={classes.Button}>Checkout</button>
-            <button className={classes.ButtonCancel}onClick={()=>{
+            <button className={classes.Button} onClick={()=>{Order();}}>Checkout</button>
+            <button className={classes.ButtonCancel} onClick={()=>{
             if(Classes = classes.Visibility){
                 setCheckoutVisible(false);
             }

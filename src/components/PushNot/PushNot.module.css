@@ -9,7 +9,7 @@
     animation-name: PushRight;
     animation-duration: .5s;
     animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
-    
+    justify-content: center;
     display: flex;
     align-items: center;
 }
