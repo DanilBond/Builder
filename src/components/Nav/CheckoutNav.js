@@ -4,6 +4,8 @@ import classes from "./CheckoutNav.module.css";
 import SwitchTheme from "./Switch/Switch";
 
 const CheckoutNav = ({theme, settheme}) => {
+    let [logout, setLogout] = useState([<></>, localStorage.getItem('user') ? <><div className={classes.underline} >LOGOUT</div></> : <></>]);
+    
     
     let Dark = <>
     <div className={classes.Nav}>
@@ -15,7 +17,7 @@ const CheckoutNav = ({theme, settheme}) => {
             </h3>
             
             <h3 className={classes.menubutton}>
-                <div className={classes.underline} >CHECKOUT</div>
+                {logout}
                 
             </h3>
             </div>
@@ -33,7 +35,7 @@ const CheckoutNav = ({theme, settheme}) => {
             </h3>
             
             <h3 className={classes.menubutton}>
-                <div className={classes.underline} >CHECKOUT</div>
+            {logout}
                 
             </h3>
             </div>

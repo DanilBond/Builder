@@ -49,7 +49,7 @@ const Layout = ({store}) => {
         {type:"audio",name:"Select audio",price:0,},
     ]);
 
-    let [theme, setTheme] = useState(true);
+    let [theme, setTheme] = useState(localStorage.getItem('theme'));
     let [checkoutVisible,setCheckoutVisible] = useState(false);
     
 
@@ -83,7 +83,7 @@ const Layout = ({store}) => {
         <Drawer img={img} loaderStyle={loaderStyle} imgStyle={imgStyle} setImgStyle={setImgStyle} setLoaderStyle={setLoaderStyle}/>
         <DrawerMobile state={DrawerState} setDrawerState={setDrawerState}/>
         <Modal setCheckoutVisible={setCheckoutVisible} state={windowState} setWindowState={setWindowState} orderObj={orderObj} TotalPrice={price} theme={theme} store={store}/>
-        <Checkout Visibility={checkoutVisible} setCheckoutVisible={setCheckoutVisible} orderOBJ={orderObj} totalPrice={price}/>
+        <Checkout theme={theme} Visibility={checkoutVisible} setCheckoutVisible={setCheckoutVisible} orderOBJ={orderObj} totalPrice={price}/>
         <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj} theme={theme}/>
         
         <Controls setImg={setImg} onStartLoadingEvent={onStartLoadingEvent} setOrderObj={setOrderObj} setSelected={setSelected} theme={theme} settheme={setTheme}/>

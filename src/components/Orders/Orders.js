@@ -7,12 +7,10 @@ import classes from "./Orders.module.css";
 
 const Orders = () => {
     let [mouseData, setMouseData] = useState({});
-    let [theme, setTheme] = useState(true);
+    let [theme, setTheme] = useState(Boolean(localStorage.getItem('theme')));
     
     let [orders, setOrders] = useState([]);
     let [result, setResult] = useState([]);
-    
-
     useEffect(()=>{
         
         axios.get('https://pcbuilder-989af-default-rtdb.firebaseio.com/orders/' + localStorage.getItem("user") + ".json")
@@ -25,6 +23,7 @@ const Orders = () => {
         
     },[]);
     useEffect(()=>{
+        setResult([]);
         for (const i of Object.values(orders)) {
             setResult((old)=>[...old,
             <Order 
@@ -32,6 +31,7 @@ const Orders = () => {
             phone={i.phone} 
             address={i.address} 
             name={i.name} 
+            theme={theme}
 
             exteriorName={i.exterior}
             cpuName={i.cpu}
@@ -43,7 +43,7 @@ const Orders = () => {
             audioName={i.audio}
             />]);
         }
-    },[orders]);
+    },[orders,theme]);
 
     return ( 
         <div className={classes.Orders} onMouseMove={(arg)=>{ setMouseData(arg);}}>

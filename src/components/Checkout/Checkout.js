@@ -6,8 +6,9 @@ import CheckoutNav from "../Nav/CheckoutNav";
 import axios from "axios";
 import PushNot from "../PushNot/PushNot";
 
-const Checkout = ({store,orderOBJ,totalPrice, Visibility,setCheckoutVisible}) => {
+const Checkout = ({store,orderOBJ,totalPrice, Visibility,setCheckoutVisible, theme}) => {
     let Classes = [classes.Visibility, Visibility ? classes.Visibility : classes.Invisibility];
+    let ThemeClasses = [classes.CheckoutBackDark, theme ? classes.CheckoutBackDark : classes.CheckoutBackLight];
 
     let [name, setName] = useState('');
     let [address, setAddress] = useState('');
@@ -63,7 +64,7 @@ const Checkout = ({store,orderOBJ,totalPrice, Visibility,setCheckoutVisible}) =>
         <div className={classes.Checkout} >
 
 
-            <div className={classes.CheckoutBack} >
+            <div className={ThemeClasses.join(" ")} >
             {errorResult}
         <div className={classes.CheckoutPar}>
             <h1>Total: {totalPrice}$</h1>

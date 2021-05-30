@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import ModalPart from "../ModalPart/ModalPart";
 import classes from "./Order.module.css";
 
 const Order = (
-        {name, total, address, phone,
+        {name, total, address, phone, 
             exteriorName, exteriorPrice, 
             cpuName, cpuPrice, 
             gpuName, gpuPrice, 
@@ -13,8 +14,12 @@ const Order = (
             audioName, audioPrice, 
         }
     ) => {
+
+        let ThemeClasses = [classes.Order, (localStorage.getItem("theme") == "true") ? classes.Order : classes.OrderLight];
+        
+        
     return ( 
-        <div className={classes.Order}>
+        <div className={ThemeClasses.join(" ")}>
             <div className={classes.Total}>
                 <div className={classes.textPar}>
                     <span className={classes.span}>Total: {total}$</span>
