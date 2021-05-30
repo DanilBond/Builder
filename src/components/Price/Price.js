@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Redirect } from "react-router";
 import classes from "./Price.module.css";
 
 const Price = ({price, setWindowState, selected, setOrderObj, orderObj, theme}) => {
@@ -6,10 +7,24 @@ const Price = ({price, setWindowState, selected, setOrderObj, orderObj, theme}) 
     let ClassesPrice = [classes.Background, theme ? classes.Background : classes.BackgroundLight];
     let ClassesOrder = [classes.BackgroundOrder, theme ? classes.BackgroundOrder : classes.BackgroundOrderLight];
     let ClassesAdd = [classes.BackgroundAdd, theme ? classes.BackgroundAdd : classes.BackgroundAddLight];
+    let [redirect, setRedirect] = useState(false);
+    let [content, setContent] = useState(
+        (localStorage.getItem("user") != "") ? 
+        <div className={ClassesOrder.join(" ")} onClick={()=>{setWindowState("Open")}}><div className={classes.Order}>Order</div></div> :
+        <div className={ClassesOrder.join(" ")} onClick={()=>{}}><div className={classes.Order}>Login</div></div> );
 
-    useEffect(function(){
-       // Object.values(orderObj).map((i) => {setPrice(price+=i.price);});
-    },[orderObj]);
+    useEffect(()=>{
+        setContent( (localStorage.getItem("user") != "") ? 
+        <div className={ClassesOrder.join(" ")} onClick={()=>{setWindowState("Open")}}><div className={classes.Order}>Order</div></div> :
+        <div className={ClassesOrder.join(" ")} onClick={()=>{setRedirect(true)}}><div className={classes.Order}>Login</div></div> );
+    },[theme, localStorage.getItem('user')]);
+
+
+
+    if(redirect == true){
+        return <Redirect to="auth"/>
+    }
+    else{
 
     return (
         <>
@@ -127,13 +142,12 @@ const Price = ({price, setWindowState, selected, setOrderObj, orderObj, theme}) 
             <div className={ClassesPrice.join(" ")}>
                 <div className={classes.Text}>Price: {price} ₽</div>
             </div>
-            <div className={ClassesOrder.join(" ")} onClick={()=>{setWindowState("Open")}}>
-                <div className={classes.Order}>Order</div>
-            </div>
+            {content}
         </div>
 
         </>
      );
+            }
 }
  
 export default Price;

@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import fire from "../../fire";
 import classes from "./CheckoutNav.module.css";
 import SwitchTheme from "./Switch/Switch";
 
 const CheckoutNav = ({theme, settheme}) => {
-    let [logout, setLogout] = useState([<></>, localStorage.getItem('user') ? <><div className={classes.underline} >LOGOUT</div></> : <></>]);
-    
+    let [logout, setLogout] = useState([<></>, localStorage.getItem('user') ? <><div className={classes.underline} onClick={()=>{
+        fire.auth().signOut();
+        localStorage.setItem("user", "");
+        setRedirect(true);
+    }}>LOGOUT</div></> : <></>]);
+    let [redirect, setRedirect] = useState(false);
     
     let Dark = <>
     <div className={classes.Nav}>
@@ -63,10 +68,15 @@ useEffect(function(){
     }
 }, []);
     
+    if(redirect == true){
+        return <Redirect to="/" />;
+    }
+    else{
 
     return(
         <>{Result}</>
     );
+    }
 }
  
 export default CheckoutNav;
