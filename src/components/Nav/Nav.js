@@ -3,6 +3,7 @@ import DrawerBurger from "../Drawer/DrawerBurger";
 import classes from "./Nav.module.css";
 import { useEffect, useState } from "react";
 import { Link, Route, Switch } from "react-router-dom";
+import fire from "../../fire";
 
 const Nav = ({setWindowState, windowState, setDrawerState, state, theme, settheme}) => {
     
@@ -122,7 +123,10 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             <div className={ClassesLogout.join(" ")}>
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}
+                <Link className={classes.Link} to="/auth">
                 <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>LOGIN</div>
+                </Link>
+                
                 
             </h3>
             </div>
@@ -142,7 +146,9 @@ const Nav = ({setWindowState, windowState, setDrawerState, state, theme, setthem
             
             <h3 className={classes.menubutton}>
                 {/* <a href=''>ORDER</a> */}
-                <div className={classes.underline} onClick={()=>{setWindowState("Open");}}>LOGOUT</div>
+                <div className={classes.underline} onClick={()=>{
+                    fire.auth().signOut();
+                    localStorage.setItem("user", "");}}>LOGOUT</div>
                 
             </h3>
                 {/* <div>BUILDER</div>

@@ -3,8 +3,8 @@
     color: white;
     border-radius: 8px;
     border: none;
-    width: 125px;
-    height: 35px;
+    width: 175px;
+    height: 45px;
     font-size: 20px;
     
   
@@ -14,9 +14,15 @@
     color: white;
     border-radius: 8px;
     border: none;
-    width: 125px;
-    height: 35px;
+    width: 175px;
+    height: 45px;
     font-size: 20px;
     margin-bottom: 15px;
     margin-top: 15px;
+}
+.SignUp:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.SignIn:hover{
+    background-color: rgba(255, 255, 255, 0.4);
 }

@@ -73,7 +73,7 @@ const Layout = ({store}) => {
 
     return (
     <div className={classes.Layout} onMouseMove={(arg)=>{ setMouseData(arg);}}>
-         <Auth/>
+        
         <LinesData mouseData={mouseData}/>
         <Nav setWindowState={setWindowState} windowState={windowState} setDrawerState={setDrawerState} state={DrawerState} theme={theme} settheme={setTheme} store={store}/>
         <Builder setOrderObj={setOrderObj} setTotalPrice={setPrice} orderObj={orderObj}/>

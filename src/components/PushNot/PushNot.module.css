@@ -1,0 +1,23 @@
+.PushNot{
+    width: 250px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    position: absolute;
+    right:0;
+    top: 65px;
+    animation-name: PushRight;
+    animation-duration: .5s;
+    animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    
+    display: flex;
+    align-items: center;
+}
+@keyframes PushRight {
+    from {right: -250px;}
+    to {right: 0px;}
+}
+span{
+    text-align: center;
+    color: white;
+}
