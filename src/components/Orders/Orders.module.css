@@ -8,10 +8,11 @@
     background-repeat: no-repeat;
     overflow: hidden;
     overflow-y: auto;
-    
+
 }
 .List{
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
     height: 100%

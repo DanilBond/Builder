@@ -8,9 +8,6 @@ import PushNot from "../PushNot/PushNot";
 
 const Checkout = ({store,orderOBJ,totalPrice, Visibility,setCheckoutVisible}) => {
     let Classes = [classes.Visibility, Visibility ? classes.Visibility : classes.Invisibility];
-    useEffect(()=>{
-        console.log(Visibility);
-    },[Visibility])
 
     let [name, setName] = useState('');
     let [address, setAddress] = useState('');
@@ -18,6 +15,16 @@ const Checkout = ({store,orderOBJ,totalPrice, Visibility,setCheckoutVisible}) =>
     let [errorResult, setErrorResult] = useState(<></>);
     let [error, setError] = useState('');
 
+    function checkPart(index){
+        console.log(orderOBJ);
+        if(orderOBJ[index].name.split(" ")[0] == "Select"){
+            return "None";
+        }
+        else{
+            return orderOBJ[index].name;
+        }
+        
+    }
     function Order(){
         if(name != '' && address != '' && phone != ''){
             axios
@@ -25,6 +32,15 @@ const Checkout = ({store,orderOBJ,totalPrice, Visibility,setCheckoutVisible}) =>
               name: name,
               address: address,
               phone: phone,
+              totalPrice: totalPrice,
+              exterior: checkPart(0),
+              cpu: checkPart(1),
+              gpu: checkPart(2),
+              mainboard: checkPart(3),
+              ram: checkPart(4),
+              hdd: checkPart(5),
+              power: checkPart(6),
+              audio: checkPart(7),
             })
             .then((response) => {
               if(response.status == 200){
@@ -50,7 +66,7 @@ const Checkout = ({store,orderOBJ,totalPrice, Visibility,setCheckoutVisible}) =>
             <div className={classes.CheckoutBack} >
             {errorResult}
         <div className={classes.CheckoutPar}>
-            <h1>Total:43545$</h1>
+            <h1>Total: {totalPrice}$</h1>
             <form className={classes.Form} onSubmit={(e)=>{e.preventDefault();}}>
 
             <input 
