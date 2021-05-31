@@ -19,7 +19,7 @@
     transition: background-color;
     transition-duration: .1s;
 }
-.DrawerMobileOpen{
+.DrawerMobileOpenDark{
     display: block;
     height: 100%;
     width: 250px;
@@ -31,7 +31,18 @@
     transition-duration: .2s;
     z-index: 5;
 }
-
+.DrawerMobileOpenLight{
+    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
+    height: 100%;
+    width: 250px;
+    position: absolute;
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    transition: width;
+    transition-duration: .2s;
+    z-index: 5;
+}
 .DrawerMobileClose{
     width: 0;
     position: absolute;
@@ -41,4 +52,26 @@
     transition: width;
     transition-duration: .2s;
     z-index: 5;
+}
+.DrawerButton{
+    color: white;
+    font-size: 30px;
+    padding:5px 15px;
+    animation-name: open;
+    animation-duration: .5s;
+}
+.DrawerButton:hover{
+    background-color: white;
+    color: black;
+}
+@keyframes open {
+    from{
+        transform: translateX(-500px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+.Link{
+    text-decoration: none;
 }

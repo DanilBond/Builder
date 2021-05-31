@@ -81,7 +81,7 @@ const Layout = ({store}) => {
         <Nav setWindowState={setWindowState} windowState={windowState} setDrawerState={setDrawerState} state={DrawerState} theme={theme} settheme={setTheme} store={store}/>
         <Builder setOrderObj={setOrderObj} setTotalPrice={setPrice} orderObj={orderObj}/>
         <Drawer img={img} loaderStyle={loaderStyle} imgStyle={imgStyle} setImgStyle={setImgStyle} setLoaderStyle={setLoaderStyle}/>
-        <DrawerMobile state={DrawerState} setDrawerState={setDrawerState}/>
+        <DrawerMobile theme={theme} setWindowState={setWindowState} windowState={windowState} state={DrawerState} setDrawerState={setDrawerState}/>
         <Modal setCheckoutVisible={setCheckoutVisible} state={windowState} setWindowState={setWindowState} orderObj={orderObj} TotalPrice={price} theme={theme} store={store}/>
         <Checkout theme={theme} Visibility={checkoutVisible} setCheckoutVisible={setCheckoutVisible} orderOBJ={orderObj} totalPrice={price}/>
         <Price price={price} setWindowState={setWindowState}  selected={selected} setOrderObj={setOrderObj} orderObj={orderObj} theme={theme}/>
